@@ -1,0 +1,94 @@
+{
+	"common": {
+		"name": "staticsfilefolder",
+		"version": "0.0.1",
+		"news": {
+			"0.0.1": {
+				"en": "initial release",
+				"de": "Erstveröffentlichung",
+				"ru": "Начальная версия",
+				"pt": "lançamento inicial",
+				"nl": "Eerste uitgave",
+				"fr": "Première version",
+				"it": "Versione iniziale",
+				"es": "Versión inicial",
+				"pl": "Pierwsze wydanie",
+				"uk": "Початкова версія",
+				"zh-cn": "首次出版"
+			}
+		},
+		"title": "Static Files Folder",
+		"titleLang": {
+			"en": "Static Files Folder",
+			"de": "Statischer Dateiordner",
+			"ru": "Папка статических файлов",
+			"pt": "Pasta de arquivos estáticos",
+			"nl": "Statische bestandenmap",
+			"fr": "Dossier de fichiers statiques",
+			"it": "Cartella file statici",
+			"es": "Carpeta de archivos estáticos",
+			"pl": "Folder plików statycznych",
+			"uk": "Папка статичних файлів",
+			"zh-cn": "静态文件夹"
+		},
+		"desc": {
+			"en": "Static Files Folder",
+			"de": "Statischer Dateiordner",
+			"ru": "Папка статических файлов",
+			"pt": "Pasta de arquivos estáticos",
+			"nl": "Statische bestandenmap",
+			"fr": "Dossier de fichiers statiques",
+			"it": "Cartella file statici",
+			"es": "Carpeta de archivos estáticos",
+			"pl": "Folder plików statycznych",
+			"uk": "Папка статичних файлів",
+			"zh-cn": "静态文件夹"
+		},
+		"authors": [
+			"gokturk413 <gokturk413@gmail.com>"
+		],
+		"keywords": [
+			"Static Files Directory Browsing"
+		],
+		"license": "MIT",
+		"licenseInformation": {
+			"type": "free",
+			"license": "MIT"
+		},
+		"platform": "Javascript/Node.js",
+		"main": "main.js",
+		"icon": "staticsfilefolder.png",
+		"enabled": true,
+		"extIcon": "https://raw.githubusercontent.com/gokturk413/ioBroker.staticsfilefolder/main/admin/staticsfilefolder.png",
+		"readme": "https://github.com/gokturk413/ioBroker.staticsfilefolder/blob/main/README.md",
+		"loglevel": "info",
+		"tier": 3,
+		"mode": "extension",
+		"type": "utility",
+		"compact": true,
+		"webExtension": "lib/web.js",
+		"connectionType": "local",
+		"dataSource": "poll",
+		"adminUI": {
+			"config": "materialize"
+		},
+		"dependencies": [
+			{
+				"js-controller": ">=3.3.22",
+				"web": ">=4.0.0"
+			}
+		],
+		"globalDependencies": [
+			{
+				"admin": ">=5.0.0"
+			}
+		]
+	},
+	"native": {
+		"option1": true,
+		"option2": "42",
+		"webInstance": "*"
+	},
+	"objects": [],
+	"instanceObjects": []
+}
