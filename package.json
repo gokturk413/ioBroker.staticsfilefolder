@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@iobroker/adapter-core": "^3.0.4",
-    "express": "^4.18.3",
+    "express": "^4.19.2",
     "serve-index": "^1.9.1"
   },
   "devDependencies": {
