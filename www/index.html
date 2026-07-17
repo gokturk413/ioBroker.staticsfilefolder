@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omni Report Browser</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Offline Libraries -->
+    <script src="libs/pdfjs/pdf.min.mjs" type="module"></script>
+    <script src="libs/xlsx.full.min.js"></script>
+    <script src="libs/mammoth.browser.min.js"></script>
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Header & Toolbar -->
+        <header class="app-header">
+            <div class="header-title">Omni Reports</div>
+            
+            <div class="toolbar">
+                <button id="btn-back" class="nav-btn" disabled>&larr; Geri</button>
+                <button id="btn-forward" class="nav-btn" disabled>İrəli &rarr;</button>
+                <button id="btn-home" class="nav-btn">Evə (Home)</button>
+                
+                <div class="breadcrumb" id="breadcrumb">
+                    <!-- Path will be injected here -->
+                </div>
+
+                <div class="filters">
+                    <input type="text" id="search-box" placeholder="Axtarış...">
+                    <select id="type-filter">
+                        <option value="all">Bütün Tiplər</option>
+                        <option value=".pdf">PDF</option>
+                        <option value=".xlsx">Excel</option>
+                        <option value=".docx">Word</option>
+                    </select>
+                    <select id="sort-select">
+                        <option value="name-asc">A-Z Sırala</option>
+                        <option value="name-desc">Z-A Sırala</option>
+                        <option value="date-desc">Ən Yeni</option>
+                        <option value="date-asc">Ən Köhnə</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content (File List) -->
+        <main class="file-list-container">
+            <div id="file-list" class="file-list">
+                <!-- File items will be injected here -->
+            </div>
+            <div id="empty-state" class="empty-state" style="display: none;">
+                Fayl tapılmadı
+            </div>
+        </main>
+    </div>
+
+    <!-- Viewer Modal -->
+    <div id="viewer-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close-button">&times;</span>
+            <div id="viewer-body">
+                <!-- Viewer content (Canvas for PDF, Table for Excel, HTML for Word) -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js" type="module"></script>
+</body>
+</html>
