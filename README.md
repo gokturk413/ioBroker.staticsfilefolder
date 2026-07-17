@@ -55,15 +55,34 @@ Once configured and the instance is running (green status):
 ---
 
 ### Requirements
-* Node.js 18.x or higher
-* ioBroker JS-Controller >= 3.3.22
+* Node.js 22.x or higher
+* ioBroker JS-Controller >= 6.0.11
 * ioBroker Web Adapter >= 4.0.0
 
-### Changelog
-#### 0.0.1
+## Changelog
+<!--
+	Placeholder for the next version (at the beginning of the line):
+	### **WORK IN PROGRESS**
+-->
+### 0.0.16
+* Fixed all repochecker errors: updated dependencies, workflows, translations, and configuration.
+
+### 0.0.15
+* Reverted minimum Node.js engine requirement to 20 to support GitHub Actions runners.
+
+### 0.0.13
+* Fixed repochecker error validation requirements (gitignore and dependabot ignore rules).
+
+### 0.0.12
+* Automatically detect ioBroker system language. Added German and Russian translations.
+
+### 0.0.11
+* Added multi-language support (English and Azerbaijani) with English as the default.
+
+### 0.0.1
 * (gokturk413) initial release: SPA, Offline document viewers, Chokidar file observer.
 
-### License
+## License
 MIT License
 
 Copyright (c) 2026 gokturk413 <gokturk413@gmail.com>

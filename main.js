@@ -62,7 +62,7 @@ class Staticsfilefolder extends utils.Adapter {
 			this.log.info("Starting file observer on: " + this.config.dirname);
 			try {
 				const chokidar = require("chokidar");
-				const path = require("path");
+				const path = require("node:path");
 
 				this.watcher = chokidar.watch(this.config.dirname, {
 					ignored: /(^|[/\\])\../, // ignore dotfiles

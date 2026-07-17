@@ -1,35 +1,72 @@
 {
 	"common": {
 		"name": "staticsfilefolder",
-		"version": "0.0.15",
+		"version": "0.0.16",
 		"news": {
+			"0.0.16": {
+				"en": "Fixed all repochecker errors: updated dependencies, workflows, translations, and configuration.",
+				"de": "Alle Repochecker-Fehler behoben: Abhängigkeiten, Workflows, Übersetzungen und Konfiguration aktualisiert.",
+				"ru": "Исправлены все ошибки repochecker: обновлены зависимости, рабочие процессы, переводы и конфигурация.",
+				"pt": "Corrigidos todos os erros do repochecker: dependências, fluxos de trabalho, traduções e configuração atualizados.",
+				"nl": "Alle repochecker-fouten opgelost: afhankelijkheden, workflows, vertalingen en configuratie bijgewerkt.",
+				"fr": "Correction de toutes les erreurs du repochecker : dépendances, workflows, traductions et configuration mis à jour.",
+				"it": "Corretti tutti gli errori del repochecker: aggiornate dipendenze, flussi di lavoro, traduzioni e configurazione.",
+				"es": "Se corrigieron todos los errores del repochecker: se actualizaron dependencias, flujos de trabajo, traducciones y configuración.",
+				"pl": "Naprawiono wszystkie błędy repochecker: zaktualizowano zależności, przepływy pracy, tłumaczenia i konfigurację.",
+				"uk": "Виправлено всі помилки repochecker: оновлено залежності, робочі процеси, переклади та конфігурацію.",
+				"zh-cn": "修复了所有repochecker错误：更新了依赖项、工作流、翻译和配置。"
+			},
 			"0.0.15": {
 				"en": "Reverted minimum Node.js engine requirement to 20 to support GitHub Actions runners.",
-				"de": "Mindestanforderung für Node.js auf 20 zurückgesetzt, um GitHub Actions-Runner zu unterstützen."
-			},
-			"0.0.14": {
-				"en": "Updated minimum dependencies (js-controller >= 6, admin >= 7.6.20) and resized the logo to 128x128 pixels.",
-				"de": "Mindestabhängigkeiten aktualisiert (js-controller >= 6, admin >= 7.6.20) und die Logogröße auf 128x128 Pixel angepasst."
+				"de": "Mindestanforderung für Node.js auf 20 zurückgesetzt, um GitHub Actions-Runner zu unterstützen.",
+				"ru": "Требование минимальной версии Node.js возвращено на 20 для поддержки GitHub Actions.",
+				"pt": "Requisito mínimo do Node.js revertido para 20 para suportar os runners do GitHub Actions.",
+				"nl": "Minimale Node.js-vereiste teruggebracht naar 20 ter ondersteuning van GitHub Actions-runners.",
+				"fr": "Exigence minimale de Node.js rétablie à 20 pour prendre en charge les runners GitHub Actions.",
+				"it": "Requisito minimo di Node.js ripristinato a 20 per supportare i runner di GitHub Actions.",
+				"es": "Requisito mínimo de Node.js revertido a 20 para admitir los runners de GitHub Actions.",
+				"pl": "Wymaganie minimalnej wersji Node.js przywrócone do 20 w celu obsługi runnerów GitHub Actions.",
+				"uk": "Мінімальна вимога Node.js повернута до 20 для підтримки GitHub Actions.",
+				"zh-cn": "将最低Node.js引擎要求恢复为20以支持GitHub Actions运行器。"
 			},
 			"0.0.13": {
 				"en": "Fixed repochecker error validation requirements (gitignore and dependabot ignore rules).",
-				"de": "Fehlerhafte Repochecker-Validierungsanforderungen behoben (gitignore- und dependabot-Ignorierregeln)."
+				"de": "Fehlerhafte Repochecker-Validierungsanforderungen behoben (gitignore- und dependabot-Ignorierregeln).",
+				"ru": "Исправлены ошибки валидации repochecker (правила gitignore и dependabot).",
+				"pt": "Corrigidos requisitos de validação do repochecker (regras gitignore e dependabot).",
+				"nl": "Repochecker-validatievereisten opgelost (gitignore- en dependabot-regels).",
+				"fr": "Correction des exigences de validation du repochecker (règles gitignore et dependabot).",
+				"it": "Corretti i requisiti di validazione del repochecker (regole gitignore e dependabot).",
+				"es": "Se corrigieron los requisitos de validación del repochecker (reglas gitignore y dependabot).",
+				"pl": "Naprawiono wymagania walidacji repochecker (reguły gitignore i dependabot).",
+				"uk": "Виправлено вимоги валідації repochecker (правила gitignore та dependabot).",
+				"zh-cn": "修复了repochecker错误验证要求（gitignore和dependabot忽略规则）。"
 			},
 			"0.0.12": {
 				"en": "Automatically detect ioBroker system language. Added German and Russian translations.",
-				"de": "ioBroker-Systemsprache automatisch erkennen. Deutsche und russische Übersetzungen hinzugefügt."
+				"de": "ioBroker-Systemsprache automatisch erkennen. Deutsche und russische Übersetzungen hinzugefügt.",
+				"ru": "Автоматическое определение языка системы ioBroker. Добавлены немецкий и русский переводы.",
+				"pt": "Detectar automaticamente o idioma do sistema ioBroker. Adicionadas traduções em alemão e russo.",
+				"nl": "Automatische detectie van de ioBroker-systeemtaal. Duitse en Russische vertalingen toegevoegd.",
+				"fr": "Détection automatique de la langue du système ioBroker. Ajout de traductions en allemand et en russe.",
+				"it": "Rilevamento automatico della lingua del sistema ioBroker. Aggiunte traduzioni in tedesco e russo.",
+				"es": "Detectar automáticamente el idioma del sistema ioBroker. Se agregaron traducciones en alemán y ruso.",
+				"pl": "Automatyczne wykrywanie języka systemu ioBroker. Dodano tłumaczenia na niemiecki i rosyjski.",
+				"uk": "Автоматичне визначення мови системи ioBroker. Додано переклади німецькою та російською.",
+				"zh-cn": "自动检测ioBroker系统语言。添加了德语和俄语翻译。"
 			},
 			"0.0.11": {
 				"en": "Added multi-language support (English and Azerbaijani) with English as the default.",
-				"de": "Mehrsprachige Unterstützung (Englisch und Aserbaidschanisch) hinzugefügt, mit Englisch als Standard."
-			},
-			"0.0.10": {
-				"en": "Updated README.md with detailed instructions for instance configuration settings.",
-				"de": "README.md mit detaillierten Anweisungen für Instanzkonfigurationseinstellungen aktualisiert."
-			},
-			"0.0.9": {
-				"en": "Updated the adapter logo with a custom designed static files icon.",
-				"de": "Das Adapter-Logo wurde durch ein benutzerdefiniertes Symbol für statische Dateien ersetzt."
+				"de": "Mehrsprachige Unterstützung (Englisch und Aserbaidschanisch) hinzugefügt, mit Englisch als Standard.",
+				"ru": "Добавлена многоязычная поддержка (английский и азербайджанский) с английским по умолчанию.",
+				"pt": "Adicionado suporte multilíngue (inglês e azerbaijano) com inglês como padrão.",
+				"nl": "Meertalige ondersteuning toegevoegd (Engels en Azerbeidzjaans) met Engels als standaard.",
+				"fr": "Ajout du support multilingue (anglais et azerbaïdjanais) avec l'anglais par défaut.",
+				"it": "Aggiunto supporto multilingue (inglese e azerbaigiano) con inglese come predefinito.",
+				"es": "Se agregó soporte multilingüe (inglés y azerbaiyano) con inglés como predeterminado.",
+				"pl": "Dodano obsługę wielu języków (angielski i azerski) z angielskim jako domyślnym.",
+				"uk": "Додано багатомовну підтримку (англійська та азербайджанська) з англійською за замовчуванням.",
+				"zh-cn": "添加了多语言支持（英语和阿塞拜疆语），默认为英语。"
 			}
 		},
 		"titleLang": {
@@ -62,6 +99,7 @@
 			"gokturk413 <gokturk413@gmail.com>"
 		],
 		"keywords": [
+			"ioBroker",
 			"Static Files Directory Browsing"
 		],
 		"licenseInformation": {
@@ -97,8 +135,6 @@
 		]
 	},
 	"native": {
-		"option1": true,
-		"option2": "42",
 		"webInstance": "*"
 	},
 	"objects": [],

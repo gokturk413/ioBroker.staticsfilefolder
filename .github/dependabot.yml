@@ -10,6 +10,8 @@ updates:
     assignees:
       - gokturk413
     versioning-strategy: increase
+    cooldown:
+      default: 7
     ignore:
       - dependency-name: "@types/node"
         update-types: ["version-update:semver-major"]
@@ -23,3 +25,5 @@ updates:
     open-pull-requests-limit: 5
     assignees:
       - gokturk413
+    cooldown:
+      default: 7
