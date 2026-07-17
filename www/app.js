@@ -16,6 +16,7 @@ const btnBack = document.getElementById('btn-back');
 const btnForward = document.getElementById('btn-forward');
 const btnHome = document.getElementById('btn-home');
 const btnTheme = document.getElementById('btn-theme');
+const btnLang = document.getElementById('btn-lang');
 const searchBox = document.getElementById('search-box');
 const typeFilter = document.getElementById('type-filter');
 const sortSelect = document.getElementById('sort-select');
@@ -33,9 +34,103 @@ const modalBtnDownload = document.getElementById('modal-btn-download');
 let currentOpenItem = null;
 let currentFilesList = [];
 
+// Localization Settings
+const translations = {
+    en: {
+        back: "← Back",
+        forward: "Forward →",
+        home: "Home",
+        searchPlaceholder: "Search...",
+        allTypes: "All Types",
+        sortAz: "Sort A-Z",
+        sortZa: "Sort Z-A",
+        sortNewest: "Newest First",
+        sortOldest: "Oldest First",
+        title: "Omni Reports",
+        loadingPdf: "Loading PDF...",
+        loadingExcel: "Loading Excel...",
+        loadingWord: "Loading Word...",
+        emptyFolder: "This folder is empty.",
+        root: "Root",
+        themeTooltip: "Toggle Dark/Light Mode",
+        langTooltip: "Change Language / Dili Dəyiş",
+        modalTitle: "File Viewer",
+        modalBack: "← Back",
+        modalForward: "Next →",
+        modalPrint: "🖨️ Print / PDF",
+        modalDownload: "📥 Download",
+        todayBadge: "Today",
+        errorLoading: "An error occurred: "
+    },
+    az: {
+        back: "← Geri",
+        forward: "İrəli →",
+        home: "Ev (Home)",
+        searchPlaceholder: "Axtarış...",
+        allTypes: "Bütün Tiplər",
+        sortAz: "A-Z Sırala",
+        sortZa: "Z-A Sırala",
+        sortNewest: "Ən Yeni",
+        sortOldest: "Ən Köhnə",
+        title: "Omni Hesabatlar",
+        loadingPdf: "PDF Yüklənir...",
+        loadingExcel: "Excel Yüklənir...",
+        loadingWord: "Word Yüklənir...",
+        emptyFolder: "Bu qovluq boşdur.",
+        root: "Kök",
+        themeTooltip: "Gecə/Gündüz Rejimi",
+        langTooltip: "Change Language / Dili Dəyiş",
+        modalTitle: "Fayl Baxışı",
+        modalBack: "← Geri",
+        modalForward: "İrəli →",
+        modalPrint: "🖨️ Çap / PDF",
+        modalDownload: "📥 Yüklə",
+        todayBadge: "Bu gün",
+        errorLoading: "Xəta baş verdi: "
+    }
+};
+
+let currentLang = 'en'; // default English
+
 // Setup PDF.js worker
 if (window.pdfjsLib) {
     window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'libs/pdfjs/pdf.worker.min.mjs';
+}
+
+// Language Initialization
+function initLang() {
+    currentLang = localStorage.getItem('staticsfilefolder_lang') || 'en';
+    applyTranslations();
+}
+
+function toggleLang() {
+    currentLang = currentLang === 'en' ? 'az' : 'en';
+    localStorage.setItem('staticsfilefolder_lang', currentLang);
+    applyTranslations();
+}
+
+function applyTranslations() {
+    const t = translations[currentLang];
+    
+    // Update elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key]) {
+            if (el.tagName === 'INPUT') {
+                el.placeholder = t[key];
+            } else {
+                el.textContent = t[key];
+            }
+        }
+    });
+
+    // Update search placeholder and other specific inputs
+    searchBox.placeholder = t.searchPlaceholder;
+    btnLang.textContent = currentLang === 'en' ? '🌐 AZ' : '🌐 EN';
+    
+    // Refresh UI to update dynamic content like dates/breadcrumbs
+    updateBreadcrumb();
+    renderItems();
 }
 
 // Theme Initialization
@@ -56,6 +151,7 @@ function toggleTheme() {
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
+    initLang();
     loadPath('');
     
     // Event Listeners
@@ -63,6 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btnForward.addEventListener('click', goForward);
     btnHome.addEventListener('click', () => navigateTo(''));
     btnTheme.addEventListener('click', toggleTheme);
+    btnLang.addEventListener('click', toggleLang);
     
     searchBox.addEventListener('input', renderItems);
     typeFilter.addEventListener('change', renderItems);
@@ -132,13 +229,14 @@ function updateNavButtons() {
 }
 
 function updateBreadcrumb() {
+    const rootName = translations[currentLang]?.root || 'Root';
     if (!currentPath) {
-        breadcrumbEl.innerHTML = '<span><i class="icon">🏠</i> Kök Qovluq</span>';
+        breadcrumbEl.innerHTML = `<span><i class="icon">🏠</i> ${rootName}</span>`;
         return;
     }
     
     const parts = currentPath.split('/');
-    let html = '<span data-path="">🏠 Kök</span>';
+    let html = `<span data-path="">🏠 ${rootName}</span>`;
     let buildPath = '';
     
     parts.forEach((part, index) => {
@@ -216,7 +314,8 @@ function renderItems() {
         const isToday = itemDate.setHours(0,0,0,0) === today;
         if (isToday) div.classList.add('is-today');
         
-        const dateStr = new Date(item.mtime).toLocaleString('az-AZ');
+        const locale = currentLang === 'en' ? 'en-US' : 'az-AZ';
+        const dateStr = new Date(item.mtime).toLocaleString(locale);
         
         let sizeStr = '';
         if (!item.isDirectory) {
@@ -224,11 +323,13 @@ function renderItems() {
             else sizeStr = (item.size / 1024).toFixed(2) + ' KB';
         }
         
+        const todayText = translations[currentLang]?.todayBadge || 'Today';
+        
         div.innerHTML = `
             <div class="file-icon">${icon}</div>
             <div class="file-name" title="${item.name}">${item.name}</div>
             <div class="file-meta">${dateStr}<br>${sizeStr}</div>
-            ${isToday ? '<div class="today-badge">Bu gün</div>' : ''}
+            ${isToday ? `<div class="today-badge">${todayText}</div>` : ''}
         `;
         
         div.addEventListener('click', () => handleItemClick(item));
@@ -352,7 +453,7 @@ function downloadCurrentFile() {
 
 async function openPdf(url) {
     viewerModal.style.display = 'block';
-    viewerBody.innerHTML = '<h2>PDF Yüklənir...</h2>';
+    viewerBody.innerHTML = `<h2>${translations[currentLang]?.loadingPdf || 'Loading PDF...'}</h2>`;
     
     try {
         const loadingTask = window.pdfjsLib.getDocument({ url: url });
@@ -379,13 +480,14 @@ async function openPdf(url) {
             await page.render(renderContext).promise;
         }
     } catch (e) {
-        viewerBody.innerHTML = `<h2 style="color:red">Xəta baş verdi: ${e.message}</h2>`;
+        const errorText = translations[currentLang]?.errorLoading || 'An error occurred: ';
+        viewerBody.innerHTML = `<h2 style="color:red">${errorText}${e.message}</h2>`;
     }
 }
 
 async function openExcel(url) {
     viewerModal.style.display = 'block';
-    viewerBody.innerHTML = '<h2>Excel Yüklənir...</h2>';
+    viewerBody.innerHTML = `<h2>${translations[currentLang]?.loadingExcel || 'Loading Excel...'}</h2>`;
     
     try {
         const res = await fetch(url);
@@ -407,13 +509,14 @@ async function openExcel(url) {
         if(table) table.className = 'sheetjs-table';
         
     } catch (e) {
-        viewerBody.innerHTML = `<h2 style="color:red">Xəta baş verdi: ${e.message}</h2>`;
+        const errorText = translations[currentLang]?.errorLoading || 'An error occurred: ';
+        viewerBody.innerHTML = `<h2 style="color:red">${errorText}${e.message}</h2>`;
     }
 }
 
 async function openWord(url) {
     viewerModal.style.display = 'block';
-    viewerBody.innerHTML = '<h2>Word Sənədi Yüklənir...</h2>';
+    viewerBody.innerHTML = `<h2>${translations[currentLang]?.loadingWord || 'Loading Word...'}</h2>`;
     
     try {
         const res = await fetch(url);
@@ -425,6 +528,7 @@ async function openWord(url) {
             ${result.value}
         </div>`;
     } catch (e) {
-        viewerBody.innerHTML = `<h2 style="color:red">Xəta baş verdi: ${e.message}</h2>`;
+        const errorText = translations[currentLang]?.errorLoading || 'An error occurred: ';
+        viewerBody.innerHTML = `<h2 style="color:red">${errorText}${e.message}</h2>`;
     }
 }

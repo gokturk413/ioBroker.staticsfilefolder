@@ -1,8 +1,11 @@
 {
 	"common": {
 		"name": "staticsfilefolder",
-		"version": "0.0.10",
+		"version": "0.0.11",
 		"news": {
+			"0.0.11": {
+				"en": "Added multi-language support (English and Azerbaijani) with English as the default."
+			},
 			"0.0.10": {
 				"en": "Updated README.md with detailed instructions for instance configuration settings."
 			},

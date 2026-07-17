@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="az">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,31 +16,32 @@
     <div class="app-container">
         <!-- Header & Toolbar -->
         <header class="app-header">
-            <div class="header-title">Omni Reports</div>
+            <div class="header-title" id="app-title" data-i18n="title">Omni Reports</div>
             
             <div class="toolbar">
-                <button id="btn-back" class="nav-btn" disabled>&larr; Geri</button>
-                <button id="btn-forward" class="nav-btn" disabled>İrəli &rarr;</button>
-                <button id="btn-home" class="nav-btn">Evə (Home)</button>
+                <button id="btn-back" class="nav-btn" data-i18n="back" disabled>&larr; Back</button>
+                <button id="btn-forward" class="nav-btn" data-i18n="forward" disabled>Forward &rarr;</button>
+                <button id="btn-home" class="nav-btn" data-i18n="home">Home</button>
                 
                 <div class="breadcrumb" id="breadcrumb">
                     <!-- Path will be injected here -->
                 </div>
 
                 <div class="filters">
-                    <button id="btn-theme" class="nav-btn" title="Gecə/Gündüz Rejimi">🌙</button>
-                    <input type="text" id="search-box" placeholder="Axtarış...">
+                    <button id="btn-lang" class="nav-btn" title="Change Language / Dili Dəyiş">🌐 AZ</button>
+                    <button id="btn-theme" class="nav-btn" title="Toggle Dark/Light Mode">🌙</button>
+                    <input type="text" id="search-box" placeholder="Search...">
                     <select id="type-filter">
-                        <option value="all">Bütün Tiplər</option>
+                        <option value="all" data-i18n="allTypes">All Types</option>
                         <option value=".pdf">PDF</option>
                         <option value=".xlsx">Excel</option>
                         <option value=".docx">Word</option>
                     </select>
                     <select id="sort-select">
-                        <option value="name-asc">A-Z Sırala</option>
-                        <option value="name-desc">Z-A Sırala</option>
-                        <option value="date-desc">Ən Yeni</option>
-                        <option value="date-asc">Ən Köhnə</option>
+                        <option value="name-asc" data-i18n="sortAz">Sort A-Z</option>
+                        <option value="name-desc" data-i18n="sortZa">Sort Z-A</option>
+                        <option value="date-desc" data-i18n="sortNewest">Newest First</option>
+                        <option value="date-asc" data-i18n="sortOldest">Oldest First</option>
                     </select>
                 </div>
             </div>
@@ -51,8 +52,8 @@
             <div id="file-list" class="file-list">
                 <!-- File items will be injected here -->
             </div>
-            <div id="empty-state" class="empty-state" style="display: none;">
-                Fayl tapılmadı
+            <div id="empty-state" class="empty-state" data-i18n="emptyFolder" style="display: none;">
+                This folder is empty.
             </div>
         </main>
     </div>
@@ -61,12 +62,12 @@
     <div id="viewer-modal" class="modal">
         <div class="modal-content">
             <header class="modal-header">
-                <div class="modal-title" id="modal-title">Fayl Baxışı</div>
+                <div class="modal-title" id="modal-title" data-i18n="modalTitle">File Viewer</div>
                 <div class="modal-toolbar">
-                    <button id="modal-btn-prev" class="nav-btn" title="Əvvəlki">&larr; Geri</button>
-                    <button id="modal-btn-next" class="nav-btn" title="Növbəti">İrəli &rarr;</button>
-                    <button id="modal-btn-print" class="nav-btn" title="Çap et / PDF olaraq saxla">🖨️ Çap / PDF</button>
-                    <button id="modal-btn-download" class="nav-btn" title="Faylı Yüklə / Export">📥 Yüklə</button>
+                    <button id="modal-btn-prev" class="nav-btn" data-i18n="modalBack" title="Previous">&larr; Back</button>
+                    <button id="modal-btn-next" class="nav-btn" data-i18n="modalForward" title="Next">Next &rarr;</button>
+                    <button id="modal-btn-print" class="nav-btn" data-i18n="modalPrint" title="Print / Save as PDF">🖨️ Print / PDF</button>
+                    <button id="modal-btn-download" class="nav-btn" data-i18n="modalDownload" title="Download File">📥 Download</button>
                     <span id="close-modal" class="close-button">&times;</span>
                 </div>
             </header>
