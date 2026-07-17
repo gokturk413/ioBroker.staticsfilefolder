@@ -64,8 +64,8 @@ Once configured and the instance is running (green status):
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### 0.0.16
-* Fixed all repochecker errors: updated dependencies, workflows, translations, and configuration.
+### 0.0.17
+* Fixed duplicate devDependencies error in package.json and verified local tests.
 
 ### 0.0.15
 * Reverted minimum Node.js engine requirement to 20 to support GitHub Actions runners.

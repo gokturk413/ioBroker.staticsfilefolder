@@ -1,20 +1,20 @@
 {
 	"common": {
 		"name": "staticsfilefolder",
-		"version": "0.0.16",
+		"version": "0.0.17",
 		"news": {
-			"0.0.16": {
-				"en": "Fixed all repochecker errors: updated dependencies, workflows, translations, and configuration.",
-				"de": "Alle Repochecker-Fehler behoben: Abhängigkeiten, Workflows, Übersetzungen und Konfiguration aktualisiert.",
-				"ru": "Исправлены все ошибки repochecker: обновлены зависимости, рабочие процессы, переводы и конфигурация.",
-				"pt": "Corrigidos todos os erros do repochecker: dependências, fluxos de trabalho, traduções e configuração atualizados.",
-				"nl": "Alle repochecker-fouten opgelost: afhankelijkheden, workflows, vertalingen en configuratie bijgewerkt.",
-				"fr": "Correction de toutes les erreurs du repochecker : dépendances, workflows, traductions et configuration mis à jour.",
-				"it": "Corretti tutti gli errori del repochecker: aggiornate dipendenze, flussi di lavoro, traduzioni e configurazione.",
-				"es": "Se corrigieron todos los errores del repochecker: se actualizaron dependencias, flujos de trabajo, traducciones y configuración.",
-				"pl": "Naprawiono wszystkie błędy repochecker: zaktualizowano zależności, przepływy pracy, tłumaczenia i konfigurację.",
-				"uk": "Виправлено всі помилки repochecker: оновлено залежності, робочі процеси, переклади та конфігурацію.",
-				"zh-cn": "修复了所有repochecker错误：更新了依赖项、工作流、翻译和配置。"
+			"0.0.17": {
+				"en": "Fixed duplicate devDependencies error in package.json and verified local tests.",
+				"de": "Fehler bezüglich doppelter devDependencies in package.json behoben und lokale Tests verifiziert.",
+				"ru": "Исправлена ошибка дублирования devDependencies в package.json и проверены локальные тесты.",
+				"pt": "Corrigido erro de devDependencies duplicadas no package.json e testes locais verificados.",
+				"nl": "Fout met dubbele devDependencies in package.json opgelost en lokale tests geverifieerd.",
+				"fr": "Correction de l'erreur de devDependencies en double dans package.json et vérification des tests locaux.",
+				"it": "Corretto errore devDependencies duplicate in package.json e verificati i test locali.",
+				"es": "Se corrigió el error de devDependencies duplicadas en package.json y se verificaron las pruebas locales.",
+				"pl": "Naprawiono błąd zduplikowanych devDependencies w package.json i zweryfikowano testy lokalne.",
+				"uk": "Виправлено помилку дублювання devDependencies у package.json та перевірено локальні тести.",
+				"zh-cn": "修复了package.json中的重复devDependencies错误并验证 locally 测试。"
 			},
 			"0.0.15": {
 				"en": "Reverted minimum Node.js engine requirement to 20 to support GitHub Actions runners.",
