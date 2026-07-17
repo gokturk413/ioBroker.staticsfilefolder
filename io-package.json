@@ -1,8 +1,12 @@
 {
 	"common": {
 		"name": "staticsfilefolder",
-		"version": "0.0.14",
+		"version": "0.0.15",
 		"news": {
+			"0.0.15": {
+				"en": "Reverted minimum Node.js engine requirement to 20 to support GitHub Actions runners.",
+				"de": "Mindestanforderung für Node.js auf 20 zurückgesetzt, um GitHub Actions-Runner zu unterstützen."
+			},
 			"0.0.14": {
 				"en": "Updated minimum dependencies (js-controller >= 6, admin >= 7.6.20) and resized the logo to 128x128 pixels.",
 				"de": "Mindestabhängigkeiten aktualisiert (js-controller >= 6, admin >= 7.6.20) und die Logogröße auf 128x128 Pixel angepasst."
