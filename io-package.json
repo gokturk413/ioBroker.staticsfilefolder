@@ -1,8 +1,11 @@
 {
 	"common": {
 		"name": "staticsfilefolder",
-		"version": "0.0.3",
+		"version": "0.0.4",
 		"news": {
+			"0.0.4": {
+				"en": "Defined latest_file_url and latest_file_path states in instanceObjects so they are created automatically upon installation."
+			},
 			"0.0.3": {
 				"en": "Fixed UI theme button visibility in dark mode and resolved PDF opening issue."
 			},
@@ -95,5 +98,32 @@
 		"webInstance": "*"
 	},
 	"objects": [],
-	"instanceObjects": []
+	"instanceObjects": [
+		{
+			"_id": "latest_file_url",
+			"type": "state",
+			"common": {
+				"name": "Latest File URL",
+				"type": "string",
+				"role": "url",
+				"read": true,
+				"write": false,
+				"def": ""
+			},
+			"native": {}
+		},
+		{
+			"_id": "latest_file_path",
+			"type": "state",
+			"common": {
+				"name": "Latest File Path",
+				"type": "string",
+				"role": "value",
+				"read": true,
+				"write": false,
+				"def": ""
+			},
+			"native": {}
+		}
+	]
 }
