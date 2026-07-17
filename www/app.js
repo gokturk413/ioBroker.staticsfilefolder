@@ -15,6 +15,7 @@ const emptyStateEl = document.getElementById('empty-state');
 const btnBack = document.getElementById('btn-back');
 const btnForward = document.getElementById('btn-forward');
 const btnHome = document.getElementById('btn-home');
+const btnTheme = document.getElementById('btn-theme');
 const searchBox = document.getElementById('search-box');
 const typeFilter = document.getElementById('type-filter');
 const sortSelect = document.getElementById('sort-select');
@@ -28,14 +29,31 @@ if (window.pdfjsLib) {
     window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'libs/pdfjs/pdf.worker.min.mjs';
 }
 
+// Theme Initialization
+function initTheme() {
+    const savedTheme = localStorage.getItem('staticsfilefolder_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    btnTheme.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+}
+
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('staticsfilefolder_theme', newTheme);
+    btnTheme.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+}
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
     loadPath('');
     
     // Event Listeners
     btnBack.addEventListener('click', goBack);
     btnForward.addEventListener('click', goForward);
     btnHome.addEventListener('click', () => navigateTo(''));
+    btnTheme.addEventListener('click', toggleTheme);
     
     searchBox.addEventListener('input', renderItems);
     typeFilter.addEventListener('change', renderItems);
