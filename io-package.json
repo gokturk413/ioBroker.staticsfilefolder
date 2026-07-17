@@ -1,59 +1,33 @@
 {
 	"common": {
 		"name": "staticsfilefolder",
-		"version": "0.0.13",
+		"version": "0.0.14",
 		"news": {
+			"0.0.14": {
+				"en": "Updated minimum dependencies (js-controller >= 6, admin >= 7.6.20) and resized the logo to 128x128 pixels.",
+				"de": "Mindestabhängigkeiten aktualisiert (js-controller >= 6, admin >= 7.6.20) und die Logogröße auf 128x128 Pixel angepasst."
+			},
 			"0.0.13": {
-				"en": "Fixed repochecker error validation requirements (gitignore and dependabot ignore rules)."
+				"en": "Fixed repochecker error validation requirements (gitignore and dependabot ignore rules).",
+				"de": "Fehlerhafte Repochecker-Validierungsanforderungen behoben (gitignore- und dependabot-Ignorierregeln)."
 			},
 			"0.0.12": {
-				"en": "Automatically detect ioBroker system language. Added German and Russian translations."
+				"en": "Automatically detect ioBroker system language. Added German and Russian translations.",
+				"de": "ioBroker-Systemsprache automatisch erkennen. Deutsche und russische Übersetzungen hinzugefügt."
 			},
 			"0.0.11": {
-				"en": "Added multi-language support (English and Azerbaijani) with English as the default."
+				"en": "Added multi-language support (English and Azerbaijani) with English as the default.",
+				"de": "Mehrsprachige Unterstützung (Englisch und Aserbaidschanisch) hinzugefügt, mit Englisch als Standard."
 			},
 			"0.0.10": {
-				"en": "Updated README.md with detailed instructions for instance configuration settings."
+				"en": "Updated README.md with detailed instructions for instance configuration settings.",
+				"de": "README.md mit detaillierten Anweisungen für Instanzkonfigurationseinstellungen aktualisiert."
 			},
 			"0.0.9": {
-				"en": "Updated the adapter logo with a custom designed static files icon."
-			},
-			"0.0.8": {
-				"en": "Fixed adapter logo transparency by converting it to a true RGBA PNG."
-			},
-			"0.0.7": {
-				"en": "Removed white background square from the adapter logo to make it transparent."
-			},
-			"0.0.6": {
-				"en": "Changed adapter mode to daemon so the main process runs and observes files correctly."
-			},
-			"0.0.5": {
-				"en": "Added print, download, and file-navigation controls inside the file viewer modal."
-			},
-			"0.0.4": {
-				"en": "Defined latest_file_url and latest_file_path states in instanceObjects so they are created automatically upon installation."
-			},
-			"0.0.3": {
-				"en": "Fixed UI theme button visibility in dark mode and resolved PDF opening issue."
-			},
-			"0.0.2": {
-				"en": "Added UI Theme support, fixed Node.js version compatibility issues and updated tests."
-			},
-			"0.0.1": {
-				"en": "initial release",
-				"de": "Erstveröffentlichung",
-				"ru": "Начальная версия",
-				"pt": "lançamento inicial",
-				"nl": "Eerste uitgave",
-				"fr": "Première version",
-				"it": "Versione iniziale",
-				"es": "Versión inicial",
-				"pl": "Pierwsze wydanie",
-				"uk": "Початкова версія",
-				"zh-cn": "首次出版"
+				"en": "Updated the adapter logo with a custom designed static files icon.",
+				"de": "Das Adapter-Logo wurde durch ein benutzerdefiniertes Symbol für statische Dateien ersetzt."
 			}
 		},
-		"title": "Static Files Folder",
 		"titleLang": {
 			"en": "Static Files Folder",
 			"de": "Statischer Dateiordner",
@@ -91,7 +65,6 @@
 			"license": "MIT"
 		},
 		"platform": "Javascript/Node.js",
-		"main": "main.js",
 		"icon": "staticsfilefolder.png",
 		"enabled": true,
 		"extIcon": "https://raw.githubusercontent.com/gokturk413/ioBroker.staticsfilefolder/main/admin/staticsfilefolder.png",
@@ -109,13 +82,13 @@
 		},
 		"dependencies": [
 			{
-				"js-controller": ">=3.3.22",
+				"js-controller": ">=6.0.11",
 				"web": ">=4.0.0"
 			}
 		],
 		"globalDependencies": [
 			{
-				"admin": ">=5.0.0"
+				"admin": ">=7.6.20"
 			}
 		]
 	},

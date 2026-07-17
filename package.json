@@ -1,6 +1,6 @@
 {
   "name": "iobroker.staticsfilefolder",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Static Files Folder",
   "author": {
     "name": "gokturk413",
@@ -16,7 +16,7 @@
     "url": "https://github.com/gokturk413/ioBroker.staticsfilefolder.git"
   },
   "engines": {
-    "node": ">= 20"
+    "node": ">= 22"
   },
   "dependencies": {
     "@iobroker/adapter-core": "^3.0.4",
