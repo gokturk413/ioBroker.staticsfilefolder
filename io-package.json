@@ -1,8 +1,11 @@
 {
 	"common": {
 		"name": "staticsfilefolder",
-		"version": "0.0.12",
+		"version": "0.0.13",
 		"news": {
+			"0.0.13": {
+				"en": "Fixed repochecker error validation requirements (gitignore and dependabot ignore rules)."
+			},
 			"0.0.12": {
 				"en": "Automatically detect ioBroker system language. Added German and Russian translations."
 			},
@@ -142,7 +145,7 @@
 			"common": {
 				"name": "Latest File Path",
 				"type": "string",
-				"role": "value",
+				"role": "text",
 				"read": true,
 				"write": false,
 				"def": ""
