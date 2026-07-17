@@ -21,10 +21,38 @@ This adapter acts as a web extension for the `ioBroker.web` adapter. It scans a 
 * **Smart Highlighting:** Files generated "Today" are distinctly highlighted with a vibrant design to stand out from historical archives.
 * **Navigation:** Native "Forward" and "Back" navigation through folders.
 
-### Usage
-1. Configure your target directory path in the adapter settings.
-2. Ensure the `ioBroker.web` adapter is installed and running.
-3. Access your files via `http://<iobroker-ip>:8082/staticsfilefolder/` (assuming your web adapter runs on port 8082).
+### Configuration & Instance Settings
+
+After installing the adapter, configure the following settings in the instance configuration page:
+
+1. **Extend WEB adapter (webInstance):**
+   * **Description:** Select which running instance of the `ioBroker.web` adapter you want to bind this extension to (e.g. `web.0` or select `all` / `*` to extend all running web servers).
+   * **Why it matters:** This adapter serves the user interface through the web adapter server.
+
+2. **Route path (route):**
+   * **Description:** The path name (slug) to access the document explorer page. For example, if you set this to `Omni`, the file explorer will be accessible at:
+     ```
+     http://<your-iobroker-ip>:8082/Omni/
+     ```
+   * **Default:** `staticsfilefolder` (which makes it accessible at `http://<your-iobroker-ip>:8082/staticsfilefolder/`).
+
+3. **Static Files Directory (dirname):**
+   * **Description:** The absolute path to the folder on your ioBroker server's disk where your document archives or reports are located (e.g. `D:\OMNI` on Windows or `/var/reports` on Linux).
+   * **Why it matters:** All files and subfolders in this directory will be visible in the web explorer. Additionally, the adapter watches this directory for newly added files and updates ioBroker states when changes occur.
+
+---
+
+### Accessing the Web Interface
+
+Once configured and the instance is running (green status):
+1. Open your browser and navigate to:
+   ```
+   http://<your-iobroker-ip>:8082/<your-route-path>/
+   ```
+   *(Replace `<your-iobroker-ip>` with your server's IP, `8082` with your Web adapter port, and `<your-route-path>` with the **Route path** setting you defined, e.g. `Omni`).*
+2. You will be greeted by the beautiful Single Page Application displaying your folders and files. You can click on directories to navigate them, or click on PDFs, Excel sheets, and Word documents to view them offline in the premium dark/light interface!
+
+---
 
 ### Requirements
 * Node.js 18.x or higher
