@@ -69,6 +69,7 @@ body {
 .nav-btn {
     padding: 8px 12px;
     background: var(--card-bg);
+    color: var(--text-color);
     border: 1px solid var(--border-color);
     border-radius: 4px;
     cursor: pointer;

@@ -246,7 +246,7 @@ async function openPdf(url) {
     viewerBody.innerHTML = '<h2>PDF Yüklənir...</h2>';
     
     try {
-        const loadingTask = window.pdfjsLib.getDocument(url);
+        const loadingTask = window.pdfjsLib.getDocument({ url: url });
         const pdf = await loadingTask.promise;
         viewerBody.innerHTML = ''; // clear loading
         

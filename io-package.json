@@ -1,8 +1,11 @@
 {
 	"common": {
 		"name": "staticsfilefolder",
-		"version": "0.0.2",
+		"version": "0.0.3",
 		"news": {
+			"0.0.3": {
+				"en": "Fixed UI theme button visibility in dark mode and resolved PDF opening issue."
+			},
 			"0.0.2": {
 				"en": "Added UI Theme support, fixed Node.js version compatibility issues and updated tests."
 			},
