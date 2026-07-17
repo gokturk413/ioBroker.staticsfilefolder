@@ -24,8 +24,8 @@ class Staticsfilefolder extends utils.Adapter {
 		this.on("ready", this.onReady.bind(this));
 		this.on("stateChange", this.onStateChange.bind(this));
 		this.on("unload", this.onUnload.bind(this));
-        
-        this.watcher = null;
+
+		this.watcher = null;
 	}
 
 	/**
@@ -61,31 +61,31 @@ class Staticsfilefolder extends utils.Adapter {
 		if (this.config.dirname) {
 			this.log.info("Starting file observer on: " + this.config.dirname);
 			try {
-				const chokidar = require('chokidar');
-				const path = require('path');
-				
+				const chokidar = require("chokidar");
+				const path = require("path");
+
 				this.watcher = chokidar.watch(this.config.dirname, {
-					ignored: /(^|[\/\\])\../, // ignore dotfiles
+					ignored: /(^|[/\\])\../, // ignore dotfiles
 					persistent: true,
 					ignoreInitial: true // do not fire for existing files on startup
 				});
 
-				this.watcher.on('add', async (filePath) => {
+				this.watcher.on("add", async (filePath) => {
 					this.log.info(`New file detected: ${filePath}`);
-					
+
 					// Calculate relative path for URL
-					const relativePath = path.relative(this.config.dirname, filePath).replace(/\\/g, '/');
-					const route = this.config.route || 'demo';
-					
+					const relativePath = path.relative(this.config.dirname, filePath).replace(/\\/g, "/");
+					const route = this.config.route || "demo";
+
 					// Assuming the web adapter serves this extension under the web server's port
 					// and relative path is encoded.
 					const fileUrl = `/${route}/files/${encodeURI(relativePath)}`;
-					
+
 					await this.setStateAsync("latest_file_url", { val: fileUrl, ack: true });
 					await this.setStateAsync("latest_file_path", { val: filePath, ack: true });
 				});
 
-				this.watcher.on('error', error => this.log.error(`Watcher error: ${error}`));
+				this.watcher.on("error", error => this.log.error(`Watcher error: ${error}`));
 			} catch (e) {
 				this.log.error("Failed to start file observer: " + e);
 			}
