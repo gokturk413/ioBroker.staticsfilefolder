@@ -87,9 +87,62 @@ const translations = {
         modalDownload: "📥 Yüklə",
         todayBadge: "Bu gün",
         errorLoading: "Xəta baş verdi: "
+    },
+    de: {
+        back: "← Zurück",
+        forward: "Weiter →",
+        home: "Startseite",
+        searchPlaceholder: "Suchen...",
+        allTypes: "Alle Typen",
+        sortAz: "A-Z sortieren",
+        sortZa: "Z-A sortieren",
+        sortNewest: "Neueste zuerst",
+        sortOldest: "Älteste zuerst",
+        title: "Omni Berichte",
+        loadingPdf: "PDF wird geladen...",
+        loadingExcel: "Excel wird geladen...",
+        loadingWord: "Word wird geladen...",
+        emptyFolder: "Dieser Ordner ist leer.",
+        root: "Hauptverzeichnis",
+        themeTooltip: "Dunkel/Hell-Modus umschalten",
+        langTooltip: "Sprache ändern",
+        modalTitle: "Dateibetrachter",
+        modalBack: "← Zurück",
+        modalForward: "Weiter →",
+        modalPrint: "🖨️ Drucken / PDF",
+        modalDownload: "📥 Herunterladen",
+        todayBadge: "Heute",
+        errorLoading: "Ein Fehler ist aufgetreten: "
+    },
+    ru: {
+        back: "← Назад",
+        forward: "Вперед →",
+        home: "Главная",
+        searchPlaceholder: "Поиск...",
+        allTypes: "Все типы",
+        sortAz: "Сортировка А-Я",
+        sortZa: "Сортировка Я-А",
+        sortNewest: "Сначала новые",
+        sortOldest: "Сначала старые",
+        title: "Omni Отчеты",
+        loadingPdf: "Загрузка PDF...",
+        loadingExcel: "Загрузка Excel...",
+        loadingWord: "Загрузка Word...",
+        emptyFolder: "Эта папка пуста.",
+        root: "Корень",
+        themeTooltip: "Переключить тему",
+        langTooltip: "Изменить язык",
+        modalTitle: "Просмотр файла",
+        modalBack: "← Назад",
+        modalForward: "Вперед →",
+        modalPrint: "🖨️ Печать / PDF",
+        modalDownload: "📥 Скачать",
+        todayBadge: "Сегодня",
+        errorLoading: "Произошла ошибка: "
     }
 };
 
+const supportedLangs = ['en', 'az', 'de', 'ru'];
 let currentLang = 'en'; // default English
 
 // Setup PDF.js worker
@@ -98,13 +151,31 @@ if (window.pdfjsLib) {
 }
 
 // Language Initialization
-function initLang() {
-    currentLang = localStorage.getItem('staticsfilefolder_lang') || 'en';
+async function initLang() {
+    let savedLang = localStorage.getItem('staticsfilefolder_lang');
+    if (!savedLang) {
+        try {
+            const res = await fetch(`${BASE_ROUTE}/api/config`);
+            const data = await res.json();
+            if (data && data.language) {
+                savedLang = data.language;
+            }
+        } catch (e) {
+            // ignore
+        }
+    }
+    
+    currentLang = savedLang || navigator.language.split('-')[0] || 'en';
+    if (!translations[currentLang]) {
+        currentLang = 'en';
+    }
     applyTranslations();
 }
 
 function toggleLang() {
-    currentLang = currentLang === 'en' ? 'az' : 'en';
+    let index = supportedLangs.indexOf(currentLang);
+    index = (index + 1) % supportedLangs.length;
+    currentLang = supportedLangs[index];
     localStorage.setItem('staticsfilefolder_lang', currentLang);
     applyTranslations();
 }
@@ -126,7 +197,7 @@ function applyTranslations() {
 
     // Update search placeholder and other specific inputs
     searchBox.placeholder = t.searchPlaceholder;
-    btnLang.textContent = currentLang === 'en' ? '🌐 AZ' : '🌐 EN';
+    btnLang.textContent = `🌐 ${currentLang.toUpperCase()}`;
     
     // Refresh UI to update dynamic content like dates/breadcrumbs
     updateBreadcrumb();
