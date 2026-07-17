@@ -1,20 +1,20 @@
 {
 	"common": {
 		"name": "staticsfilefolder",
-		"version": "0.0.17",
+		"version": "0.0.18",
 		"news": {
-			"0.0.17": {
-				"en": "Fixed duplicate devDependencies error in package.json and verified local tests.",
-				"de": "Fehler bezüglich doppelter devDependencies in package.json behoben und lokale Tests verifiziert.",
-				"ru": "Исправлена ошибка дублирования devDependencies в package.json и проверены локальные тесты.",
-				"pt": "Corrigido erro de devDependencies duplicadas no package.json e testes locais verificados.",
-				"nl": "Fout met dubbele devDependencies in package.json opgelost en lokale tests geverifieerd.",
-				"fr": "Correction de l'erreur de devDependencies en double dans package.json et vérification des tests locaux.",
-				"it": "Corretto errore devDependencies duplicate in package.json e verificati i test locali.",
-				"es": "Se corrigió el error de devDependencies duplicadas en package.json y se verificaron las pruebas locales.",
-				"pl": "Naprawiono błąd zduplikowanych devDependencies w package.json i zweryfikowano testy lokalne.",
-				"uk": "Виправлено помилку дублювання devDependencies у package.json та перевірено локальні тести.",
-				"zh-cn": "修复了package.json中的重复devDependencies错误并验证 locally 测试。"
+			"0.0.18": {
+				"en": "Cleaned up npm lockfile and forced hoisting of test dependencies.",
+				"de": "Npm-Lockfile bereinigt und das Hosten von Test-Abhängigkeiten erzwungen.",
+				"ru": "Очищен npm lockfile и принудительно подняты зависимости для тестирования.",
+				"pt": "Limpo o lockfile do npm e forçado o hoisting das dependências de teste.",
+				"nl": "Npm lockfile opgeschoond en hoisting van test-afhankelijkheden geforceerd.",
+				"fr": "Nettoyage du fichier de verrouillage npm et forçage du hoisting des dépendances de test.",
+				"it": "Pulito il file di blocco npm e forzato l'hoisting delle dipendenze di test.",
+				"es": "Se limpió el archivo de bloqueo npm y se forzó la elevación de las dependencias de prueba.",
+				"pl": "Oczyszczono plik blokady npm i wymuszono hoisting zależności testowych.",
+				"uk": "Очищено файл блокування npm та примусово піднято залежності для тестування.",
+				"zh-cn": "清理了npm锁文件并强制提升测试依赖项。"
 			},
 			"0.0.15": {
 				"en": "Reverted minimum Node.js engine requirement to 20 to support GitHub Actions runners.",
