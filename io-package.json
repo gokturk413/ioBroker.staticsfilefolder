@@ -1,8 +1,11 @@
 {
 	"common": {
 		"name": "staticsfilefolder",
-		"version": "0.0.6",
+		"version": "0.0.7",
 		"news": {
+			"0.0.7": {
+				"en": "Removed white background square from the adapter logo to make it transparent."
+			},
 			"0.0.6": {
 				"en": "Changed adapter mode to daemon so the main process runs and observes files correctly."
 			},
