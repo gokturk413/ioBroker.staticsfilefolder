@@ -1,8 +1,11 @@
 {
 	"common": {
 		"name": "staticsfilefolder",
-		"version": "0.0.4",
+		"version": "0.0.5",
 		"news": {
+			"0.0.5": {
+				"en": "Added print, download, and file-navigation controls inside the file viewer modal."
+			},
 			"0.0.4": {
 				"en": "Defined latest_file_url and latest_file_path states in instanceObjects so they are created automatically upon installation."
 			},

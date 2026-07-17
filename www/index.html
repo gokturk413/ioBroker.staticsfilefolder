@@ -60,7 +60,16 @@
     <!-- Viewer Modal -->
     <div id="viewer-modal" class="modal">
         <div class="modal-content">
-            <span id="close-modal" class="close-button">&times;</span>
+            <header class="modal-header">
+                <div class="modal-title" id="modal-title">Fayl Baxışı</div>
+                <div class="modal-toolbar">
+                    <button id="modal-btn-prev" class="nav-btn" title="Əvvəlki">&larr; Geri</button>
+                    <button id="modal-btn-next" class="nav-btn" title="Növbəti">İrəli &rarr;</button>
+                    <button id="modal-btn-print" class="nav-btn" title="Çap et / PDF olaraq saxla">🖨️ Çap / PDF</button>
+                    <button id="modal-btn-download" class="nav-btn" title="Faylı Yüklə / Export">📥 Yüklə</button>
+                    <span id="close-modal" class="close-button">&times;</span>
+                </div>
+            </header>
             <div id="viewer-body">
                 <!-- Viewer content (Canvas for PDF, Table for Excel, HTML for Word) -->
             </div>

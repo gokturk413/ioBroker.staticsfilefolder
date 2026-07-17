@@ -23,6 +23,15 @@ const sortSelect = document.getElementById('sort-select');
 const viewerModal = document.getElementById('viewer-modal');
 const closeModal = document.getElementById('close-modal');
 const viewerBody = document.getElementById('viewer-body');
+const modalTitle = document.getElementById('modal-title');
+const modalBtnPrev = document.getElementById('modal-btn-prev');
+const modalBtnNext = document.getElementById('modal-btn-next');
+const modalBtnPrint = document.getElementById('modal-btn-print');
+const modalBtnDownload = document.getElementById('modal-btn-download');
+
+// Modal Navigation State
+let currentOpenItem = null;
+let currentFilesList = [];
 
 // Setup PDF.js worker
 if (window.pdfjsLib) {
@@ -59,9 +68,16 @@ document.addEventListener('DOMContentLoaded', () => {
     typeFilter.addEventListener('change', renderItems);
     sortSelect.addEventListener('change', renderItems);
     
+    // Modal Toolbar Event Listeners
+    modalBtnPrev.addEventListener('click', navigateModalPrev);
+    modalBtnNext.addEventListener('click', navigateModalNext);
+    modalBtnPrint.addEventListener('click', printModalContent);
+    modalBtnDownload.addEventListener('click', downloadCurrentFile);
+    
     closeModal.addEventListener('click', () => {
         viewerModal.style.display = 'none';
         viewerBody.innerHTML = ''; // clear memory
+        currentOpenItem = null;
     });
 });
 
@@ -181,6 +197,8 @@ function renderItems() {
         emptyStateEl.style.display = 'none';
     }
     
+    currentFilesList = filtered.filter(item => !item.isDirectory);
+    
     const today = new Date().setHours(0,0,0,0);
     
     filtered.forEach(item => {
@@ -223,19 +241,110 @@ function handleItemClick(item) {
         const newPath = currentPath ? `${currentPath}/${item.name}` : item.name;
         navigateTo(newPath);
     } else {
-        const filePath = currentPath ? `${currentPath}/${item.name}` : item.name;
+        openFile(item);
+    }
+}
+
+function openFile(item) {
+    currentOpenItem = item;
+    modalTitle.textContent = item.name;
+    
+    // Find index of current file in currentFilesList
+    const index = currentFilesList.findIndex(f => f.name === item.name);
+    modalBtnPrev.disabled = index <= 0;
+    modalBtnNext.disabled = index === -1 || index >= currentFilesList.length - 1;
+    
+    const filePath = currentPath ? `${currentPath}/${item.name}` : item.name;
+    const fileUrl = `${FILE_URL}/${encodeURIComponent(filePath)}`;
+    
+    if (item.ext === '.pdf') {
+        openPdf(fileUrl);
+    } else if (item.ext === '.xlsx' || item.ext === '.csv') {
+        openExcel(fileUrl);
+    } else if (item.ext === '.docx') {
+        openWord(fileUrl);
+    } else {
+        // Unhandled file type, just open in new tab
+        window.open(fileUrl, '_blank');
+        viewerModal.style.display = 'none';
+        currentOpenItem = null;
+    }
+}
+
+function navigateModalPrev() {
+    if (!currentOpenItem) return;
+    const index = currentFilesList.findIndex(f => f.name === currentOpenItem.name);
+    if (index > 0) {
+        openFile(currentFilesList[index - 1]);
+    }
+}
+
+function navigateModalNext() {
+    if (!currentOpenItem) return;
+    const index = currentFilesList.findIndex(f => f.name === currentOpenItem.name);
+    if (index !== -1 && index < currentFilesList.length - 1) {
+        openFile(currentFilesList[index + 1]);
+    }
+}
+
+function printModalContent() {
+    if (!currentOpenItem) return;
+    
+    const canvases = viewerBody.querySelectorAll('canvas');
+    let contentHtml = '';
+    
+    if (canvases.length > 0) {
+        // PDF (which is rendered in canvases)
+        canvases.forEach(canvas => {
+            const dataUrl = canvas.toDataURL();
+            contentHtml += `<img src="${dataUrl}" style="max-width: 100%; margin-bottom: 20px; display: block;" />`;
+        });
+    } else {
+        // Excel table or Word document HTML
+        contentHtml = viewerBody.innerHTML;
+    }
+    
+    const printWindow = window.open('', '_blank');
+    printWindow.document.write(`
+        <html>
+        <head>
+            <title>${currentOpenItem.name}</title>
+            <style>
+                body { margin: 20px; font-family: sans-serif; background: white; color: black; }
+                img, table { max-width: 100%; page-break-inside: avoid; }
+                table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+                table th, table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+                table th { background-color: #f2f2f2; }
+            </style>
+        </head>
+        <body>
+            <h2>${currentOpenItem.name}</h2>
+            <hr />
+            ${contentHtml}
+            <script>
+                window.onload = function() {
+                    setTimeout(() => {
+                        window.print();
+                        window.close();
+                    }, 500);
+                };
+            <\/script>
+        </body>
+        </html>
+    `);
+    printWindow.document.close();
+}
+
+function downloadCurrentFile() {
+    if (currentOpenItem) {
+        const filePath = currentPath ? `${currentPath}/${currentOpenItem.name}` : currentOpenItem.name;
         const fileUrl = `${FILE_URL}/${encodeURIComponent(filePath)}`;
-        
-        if (item.ext === '.pdf') {
-            openPdf(fileUrl);
-        } else if (item.ext === '.xlsx' || item.ext === '.csv') {
-            openExcel(fileUrl);
-        } else if (item.ext === '.docx') {
-            openWord(fileUrl);
-        } else {
-            // Unhandled file type, just open in new tab
-            window.open(fileUrl, '_blank');
-        }
+        const a = document.createElement('a');
+        a.href = fileUrl;
+        a.download = currentOpenItem.name;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
     }
 }
 
