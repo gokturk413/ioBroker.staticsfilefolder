@@ -1,8 +1,11 @@
 {
 	"common": {
 		"name": "staticsfilefolder",
-		"version": "0.0.8",
+		"version": "0.0.9",
 		"news": {
+			"0.0.9": {
+				"en": "Updated the adapter logo with a custom designed static files icon."
+			},
 			"0.0.8": {
 				"en": "Fixed adapter logo transparency by converting it to a true RGBA PNG."
 			},
