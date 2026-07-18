@@ -1,20 +1,20 @@
 {
 	"common": {
 		"name": "staticsfilefolder",
-		"version": "0.0.21",
+		"version": "0.0.22",
 		"news": {
-			"0.0.21": {
-				"en": "Upgraded Express to major version 5.x and updated tsconfig to target Node 22.",
-				"de": "Express auf Major-Version 5.x aktualisiert und tsconfig auf Node 22 angepasst.",
-				"ru": "Обновлен Express до мажорной версии 5.x и обновлен tsconfig для поддержки Node 22.",
-				"pt": "Atualizado o Express para a versão principal 5.x e atualizado o tsconfig para o Node 22.",
-				"nl": "Express geüpgraded naar hoofdversie 5.x en tsconfig bijgewerkt naar Node 22.",
-				"fr": "Mise à niveau d'Express vers la version majeure 5.x et mise à jour de tsconfig pour cibler Node 22.",
-				"it": "Aggiornato Express alla versione principale 5.x e aggiornato tsconfig per Node 22.",
-				"es": "Se actualizó Express a la versión principal 5.x y se actualizó tsconfig para apuntar a Node 22.",
-				"pl": "Uaktualniono Express do głównej wersji 5.x i zaktualizowano tsconfig dla Node 22.",
-				"uk": "Оновлено Express до мажорної версії 5.x та оновлено tsconfig для підтримки Node 22.",
-				"zh-cn": "将Express升级到主版本5.x并更新tsconfig以针对Node 22。"
+			"0.0.22": {
+				"en": "Fixed PDF print layout to prevent vertical page overflow, and fixed zoom/scale rendering issues in PDF viewer.",
+				"de": "PDF-Drucklayout korrigiert, um vertikalen Seitenüberlauf zu verhindern, und Zoom-Rendering-Probleme im PDF-Viewer behoben.",
+				"ru": "Исправлен макет печати PDF для предотвращения вертикального переполнения страниц, и исправлены проблемы с масштабированием в просмотрщике PDF.",
+				"pt": "Corrigido o layout de impressão PDF para evitar o transbordamento vertical de páginas e corrigidos os problemas de renderização de zoom no visualizador de PDF.",
+				"nl": "PDF-afdrukopmaak gecorrigeerd om verticale pagina-overloop te voorkomen, en zoom-rendervraagstukken in PDF-viewer opgelost.",
+				"fr": "Correction de la mise en page d'impression PDF pour éviter le débordement vertical des pages, et correction des problèmes de rendu de zoom dans la visionneuse PDF.",
+				"it": "Corretto il layout di stampa PDF per prevenire l'overflow verticale della pagina e risolti i problemi di rendering dello zoom nel visualizzatore PDF.",
+				"es": "Se corrigió el diseño de impresión PDF para evitar el desbordamiento vertical de la página y se corrigieron los problemas de renderizado de zoom en el visor de PDF.",
+				"pl": "Naprawiono układ wydruku PDF, aby zapobiec pionowemu przepełnieniu stron, oraz naprawiono problemy z renderowaniem powiększenia w przeglądarce PDF.",
+				"uk": "Виправлено макет друку PDF для запобігання вертикальному переповненню сторінок, та виправлено проблеми з масштабуванням у переглядачі PDF.",
+				"zh-cn": "修复了PDF打印布局以防止垂直页面溢出，并修复了PDF查看器中的缩放渲染问题。"
 			},
 			"0.0.15": {
 				"en": "Reverted minimum Node.js engine requirement to 20 to support GitHub Actions runners.",

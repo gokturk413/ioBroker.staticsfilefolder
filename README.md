@@ -64,6 +64,9 @@ Once configured and the instance is running (green status):
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### 0.0.22
+* Fixed PDF print layout to prevent vertical page overflow, and fixed zoom/scale rendering issues in PDF viewer.
+
 ### 0.0.21
 * Upgraded Express to major version 5.x and updated tsconfig to target Node 22.
 

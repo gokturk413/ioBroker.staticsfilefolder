@@ -507,10 +507,13 @@ function printModalContent() {
                     color: black;
                 }
                 .pdf-page-img {
-                    width: 100%;
                     max-width: 100%;
+                    max-height: 100vh;
+                    width: auto;
                     height: auto;
                     display: block;
+                    margin: 0 auto;
+                    page-break-inside: avoid;
                     page-break-after: always;
                 }
                 .pdf-page-img:last-child {
@@ -582,9 +585,12 @@ async function renderPdfPages() {
             canvas.height = viewport.height;
             canvas.width = viewport.width;
             
+            canvas.style.width = `${viewport.width}px`;
+            canvas.style.height = `${viewport.height}px`;
+            canvas.style.maxWidth = 'none';
             canvas.style.display = 'block';
-            canvas.style.margin = '10px auto';
-            canvas.style.boxShadow = '0 4px 8px rgba(0,0,0,0.15)';
+            canvas.style.margin = '15px auto';
+            canvas.style.boxShadow = '0 4px 10px rgba(0,0,0,0.25)';
             
             viewerBody.appendChild(canvas);
             
