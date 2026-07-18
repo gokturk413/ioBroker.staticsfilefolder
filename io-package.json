@@ -1,20 +1,20 @@
 {
 	"common": {
 		"name": "staticsfilefolder",
-		"version": "0.0.20",
+		"version": "0.0.21",
 		"news": {
-			"0.0.20": {
-				"en": "Fixed dependabot auto-merge workflow write permissions.",
-				"de": "Schreibrechte für den Dependabot-Auto-Merge-Workflow behoben.",
-				"ru": "Исправлены права на запись для рабочего процесса автоматического слияния Dependabot.",
-				"pt": "Corrigidas as permissões de gravação do fluxo de trabalho de fusão automática do dependabot.",
-				"nl": "Schrijfrechten voor dependabot auto-merge workflow gecorrigeerd.",
-				"fr": "Correction des autorisations d'écriture pour le workflow de fusion automatique dependabot.",
-				"it": "Corretti i permessi di scrittura per il workflow di fusione automatica dependabot.",
-				"es": "Se corrigieron los permisos de escritura del flujo de trabajo de fusión automática de dependabot.",
-				"pl": "Naprawiono uprawnienia do zapisu dla przepływu pracy automatycznego scalania dependabot.",
-				"uk": "Виправлено права на запис для робочого процесу автоматичного злиття dependabot.",
-				"zh-cn": "修复了dependabot自动合并工作流写入权限。"
+			"0.0.21": {
+				"en": "Upgraded Express to major version 5.x and updated tsconfig to target Node 22.",
+				"de": "Express auf Major-Version 5.x aktualisiert und tsconfig auf Node 22 angepasst.",
+				"ru": "Обновлен Express до мажорной версии 5.x и обновлен tsconfig для поддержки Node 22.",
+				"pt": "Atualizado o Express para a versão principal 5.x e atualizado o tsconfig para o Node 22.",
+				"nl": "Express geüpgraded naar hoofdversie 5.x en tsconfig bijgewerkt naar Node 22.",
+				"fr": "Mise à niveau d'Express vers la version majeure 5.x et mise à jour de tsconfig pour cibler Node 22.",
+				"it": "Aggiornato Express alla versione principale 5.x e aggiornato tsconfig per Node 22.",
+				"es": "Se actualizó Express a la versión principal 5.x y se actualizó tsconfig para apuntar a Node 22.",
+				"pl": "Uaktualniono Express do głównej wersji 5.x i zaktualizowano tsconfig dla Node 22.",
+				"uk": "Оновлено Express до мажорної версії 5.x та оновлено tsconfig для підтримки Node 22.",
+				"zh-cn": "将Express升级到主版本5.x并更新tsconfig以针对Node 22。"
 			},
 			"0.0.15": {
 				"en": "Reverted minimum Node.js engine requirement to 20 to support GitHub Actions runners.",

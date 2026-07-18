@@ -64,6 +64,9 @@ Once configured and the instance is running (green status):
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### 0.0.21
+* Upgraded Express to major version 5.x and updated tsconfig to target Node 22.
+
 ### 0.0.20
 * Fixed dependabot auto-merge workflow write permissions.
 
