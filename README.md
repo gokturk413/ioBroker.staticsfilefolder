@@ -64,6 +64,9 @@ Once configured and the instance is running (green status):
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### 0.0.23
+* Added live rendering / auto-refresh in file explorer on file additions/deletions.
+
 ### 0.0.22
 * Fixed PDF print layout to prevent vertical page overflow, and fixed zoom/scale rendering issues in PDF viewer.
 

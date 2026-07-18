@@ -7,6 +7,7 @@ let currentPath = '';
 let historyStack = [];
 let forwardStack = [];
 let currentItems = [];
+let pollInterval = null;
 
 // DOM Elements
 const breadcrumbEl = document.getElementById('breadcrumb');
@@ -227,6 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initLang();
     loadPath('');
+    startPolling();
     
     // Event Listeners
     btnBack.addEventListener('click', goBack);
@@ -279,6 +281,39 @@ async function loadPath(path) {
         console.error(e);
         alert('Şəbəkə xətası.');
     }
+}
+
+function startPolling() {
+    if (pollInterval) clearInterval(pollInterval);
+    pollInterval = setInterval(async () => {
+        if (document.hidden) return;
+        try {
+            const response = await fetch(`${API_URL}?path=${encodeURIComponent(currentPath)}`);
+            const data = await response.json();
+            if (data.success) {
+                const itemsChanged = JSON.stringify(data.items) !== JSON.stringify(currentItems);
+                if (itemsChanged) {
+                    currentItems = data.items;
+                    renderItems();
+                    
+                    if (currentOpenItem) {
+                        const fileStillExists = data.items.some(item => !item.isDirectory && item.name === currentOpenItem.name);
+                        if (!fileStillExists) {
+                            viewerModal.style.display = 'none';
+                            viewerBody.innerHTML = '';
+                            currentOpenItem = null;
+                            currentPdfDoc = null;
+                            currentPdfZoom = 1.5;
+                            modalPdfZoom.value = '1.5';
+                            modalPdfZoom.style.display = 'none';
+                        }
+                    }
+                }
+            }
+        } catch (e) {
+            console.warn('Polling error:', e);
+        }
+    }, 3000);
 }
 
 function navigateTo(path) {
