@@ -1,20 +1,20 @@
 {
 	"common": {
 		"name": "staticsfilefolder",
-		"version": "0.0.19",
+		"version": "0.0.20",
 		"news": {
-			"0.0.19": {
-				"en": "Fixed PDF printing layout margins to fit 1 page, removed file title header from print view, and added zoom controls to PDF viewer.",
-				"de": "Das PDF-Drucklayout-Ränder wurden auf 1 Seite angepasst, der Dateititelkopf wurde aus der Druckansicht entfernt und Zoom-Steuerelemente im PDF-Viewer hinzugefügt.",
-				"ru": "Исправлены поля макета печати PDF для соответствия 1 странице, удален заголовок файла из режима печати и добавлены элементы управления масштабированием в просмотрщик PDF.",
-				"pt": "Corrigidas as margens do layout de impressão PDF para caber em 1 página, removido o cabeçalho do título do arquivo da visualização de impressão e adicionados controles de zoom ao visualizador de PDF.",
-				"nl": "PDF-printlayoutmarges aangepast om op 1 pagina te passen, bestandsnaamkoptekst verwijderd uit de printweergave en zoomknoppen toegevoegd aan de PDF-viewer.",
-				"fr": "Correction des marges de mise en page d'impression PDF pour s'adapter à 1 page, suppression de l'en-tête du titre du fichier de la vue d'impression et ajout de commandes de zoom à la visionneuse PDF.",
-				"it": "Corretti i margini del layout di stampa PDF per adattarsi a 1 pagina, rimosso l'intestazione del titolo del file dalla visualizzazione di stampa e aggiunti controlli di zoom al visualizzatore di PDF.",
-				"es": "Se corrigieron los márgenes del diseño de impresión PDF para que quepan en 1 página, se eliminó el encabezado del título del archivo de la vista de impresión y se agregaron controles de zoom al visor de PDF.",
-				"pl": "Naprawiono marginesy układu wydruku PDF, aby pasowały do 1 strony, usunięto nagłówek tytułu pliku z widoku wydruku i dodano sterowanie powiększeniem do przeglądarki PDF.",
-				"uk": "Виправлено поля макета друку PDF для відповідності 1 сторінці, вилучено заголовок назвы файлу з режиму друку та додано елементи управління масштабуванням у переглядач PDF.",
-				"zh-cn": "修复了PDF打印布局页边距以适应1页，从打印视图中删除了文件标题页眉，并在PDF查看器中添加了缩放控制。"
+			"0.0.20": {
+				"en": "Fixed dependabot auto-merge workflow write permissions.",
+				"de": "Schreibrechte für den Dependabot-Auto-Merge-Workflow behoben.",
+				"ru": "Исправлены права на запись для рабочего процесса автоматического слияния Dependabot.",
+				"pt": "Corrigidas as permissões de gravação do fluxo de trabalho de fusão automática do dependabot.",
+				"nl": "Schrijfrechten voor dependabot auto-merge workflow gecorrigeerd.",
+				"fr": "Correction des autorisations d'écriture pour le workflow de fusion automatique dependabot.",
+				"it": "Corretti i permessi di scrittura per il workflow di fusione automatica dependabot.",
+				"es": "Se corrigieron los permisos de escritura del flujo de trabajo de fusión automática de dependabot.",
+				"pl": "Naprawiono uprawnienia do zapisu dla przepływu pracy automatycznego scalania dependabot.",
+				"uk": "Виправлено права на запис для робочого процесу автоматичного злиття dependabot.",
+				"zh-cn": "修复了dependabot自动合并工作流写入权限。"
 			},
 			"0.0.15": {
 				"en": "Reverted minimum Node.js engine requirement to 20 to support GitHub Actions runners.",

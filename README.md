@@ -64,6 +64,9 @@ Once configured and the instance is running (green status):
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### 0.0.20
+* Fixed dependabot auto-merge workflow write permissions.
+
 ### 0.0.19
 * Fixed PDF printing layout margins to fit 1 page, removed file title header from print view, and added zoom controls to PDF viewer.
 
