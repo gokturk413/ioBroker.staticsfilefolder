@@ -1,20 +1,20 @@
 {
 	"common": {
 		"name": "staticsfilefolder",
-		"version": "0.0.18",
+		"version": "0.0.19",
 		"news": {
-			"0.0.18": {
-				"en": "Cleaned up npm lockfile and forced hoisting of test dependencies.",
-				"de": "Npm-Lockfile bereinigt und das Hosten von Test-Abhängigkeiten erzwungen.",
-				"ru": "Очищен npm lockfile и принудительно подняты зависимости для тестирования.",
-				"pt": "Limpo o lockfile do npm e forçado o hoisting das dependências de teste.",
-				"nl": "Npm lockfile opgeschoond en hoisting van test-afhankelijkheden geforceerd.",
-				"fr": "Nettoyage du fichier de verrouillage npm et forçage du hoisting des dépendances de test.",
-				"it": "Pulito il file di blocco npm e forzato l'hoisting delle dipendenze di test.",
-				"es": "Se limpió el archivo de bloqueo npm y se forzó la elevación de las dependencias de prueba.",
-				"pl": "Oczyszczono plik blokady npm i wymuszono hoisting zależności testowych.",
-				"uk": "Очищено файл блокування npm та примусово піднято залежності для тестування.",
-				"zh-cn": "清理了npm锁文件并强制提升测试依赖项。"
+			"0.0.19": {
+				"en": "Fixed PDF printing layout margins to fit 1 page, removed file title header from print view, and added zoom controls to PDF viewer.",
+				"de": "Das PDF-Drucklayout-Ränder wurden auf 1 Seite angepasst, der Dateititelkopf wurde aus der Druckansicht entfernt und Zoom-Steuerelemente im PDF-Viewer hinzugefügt.",
+				"ru": "Исправлены поля макета печати PDF для соответствия 1 странице, удален заголовок файла из режима печати и добавлены элементы управления масштабированием в просмотрщик PDF.",
+				"pt": "Corrigidas as margens do layout de impressão PDF para caber em 1 página, removido o cabeçalho do título do arquivo da visualização de impressão e adicionados controles de zoom ao visualizador de PDF.",
+				"nl": "PDF-printlayoutmarges aangepast om op 1 pagina te passen, bestandsnaamkoptekst verwijderd uit de printweergave en zoomknoppen toegevoegd aan de PDF-viewer.",
+				"fr": "Correction des marges de mise en page d'impression PDF pour s'adapter à 1 page, suppression de l'en-tête du titre du fichier de la vue d'impression et ajout de commandes de zoom à la visionneuse PDF.",
+				"it": "Corretti i margini del layout di stampa PDF per adattarsi a 1 pagina, rimosso l'intestazione del titolo del file dalla visualizzazione di stampa e aggiunti controlli di zoom al visualizzatore di PDF.",
+				"es": "Se corrigieron los márgenes del diseño de impresión PDF para que quepan en 1 página, se eliminó el encabezado del título del archivo de la vista de impresión y se agregaron controles de zoom al visor de PDF.",
+				"pl": "Naprawiono marginesy układu wydruku PDF, aby pasowały do 1 strony, usunięto nagłówek tytułu pliku z widoku wydruku i dodano sterowanie powiększeniem do przeglądarki PDF.",
+				"uk": "Виправлено поля макета друку PDF для відповідності 1 сторінці, вилучено заголовок назвы файлу з режиму друку та додано елементи управління масштабуванням у переглядач PDF.",
+				"zh-cn": "修复了PDF打印布局页边距以适应1页，从打印视图中删除了文件标题页眉，并在PDF查看器中添加了缩放控制。"
 			},
 			"0.0.15": {
 				"en": "Reverted minimum Node.js engine requirement to 20 to support GitHub Actions runners.",

@@ -28,11 +28,14 @@ const modalTitle = document.getElementById('modal-title');
 const modalBtnPrev = document.getElementById('modal-btn-prev');
 const modalBtnNext = document.getElementById('modal-btn-next');
 const modalBtnPrint = document.getElementById('modal-btn-print');
+const modalPdfZoom = document.getElementById('modal-pdf-zoom');
 const modalBtnDownload = document.getElementById('modal-btn-download');
 
 // Modal Navigation State
 let currentOpenItem = null;
 let currentFilesList = [];
+let currentPdfDoc = null;
+let currentPdfZoom = 1.5;
 
 // Localization Settings
 const translations = {
@@ -240,12 +243,20 @@ document.addEventListener('DOMContentLoaded', () => {
     modalBtnPrev.addEventListener('click', navigateModalPrev);
     modalBtnNext.addEventListener('click', navigateModalNext);
     modalBtnPrint.addEventListener('click', printModalContent);
+    modalPdfZoom.addEventListener('change', (e) => {
+        currentPdfZoom = parseFloat(e.target.value);
+        renderPdfPages();
+    });
     modalBtnDownload.addEventListener('click', downloadCurrentFile);
     
     closeModal.addEventListener('click', () => {
         viewerModal.style.display = 'none';
         viewerBody.innerHTML = ''; // clear memory
         currentOpenItem = null;
+        currentPdfDoc = null;
+        currentPdfZoom = 1.5;
+        modalPdfZoom.value = '1.5';
+        modalPdfZoom.style.display = 'none';
     });
 });
 
@@ -420,6 +431,7 @@ function handleItemClick(item) {
 function openFile(item) {
     currentOpenItem = item;
     modalTitle.textContent = item.name;
+    modalPdfZoom.style.display = 'none';
     
     // Find index of current file in currentFilesList
     const index = currentFilesList.findIndex(f => f.name === item.name);
@@ -464,12 +476,13 @@ function printModalContent() {
     
     const canvases = viewerBody.querySelectorAll('canvas');
     let contentHtml = '';
+    let isPdf = canvases.length > 0;
     
-    if (canvases.length > 0) {
+    if (isPdf) {
         // PDF (which is rendered in canvases)
         canvases.forEach(canvas => {
             const dataUrl = canvas.toDataURL();
-            contentHtml += `<img src="${dataUrl}" style="max-width: 100%; margin-bottom: 20px; display: block;" />`;
+            contentHtml += `<img src="${dataUrl}" class="pdf-page-img" />`;
         });
     } else {
         // Excel table or Word document HTML
@@ -482,16 +495,34 @@ function printModalContent() {
         <head>
             <title>${currentOpenItem.name}</title>
             <style>
-                body { margin: 20px; font-family: sans-serif; background: white; color: black; }
-                img, table { max-width: 100%; page-break-inside: avoid; }
+                @page {
+                    size: auto;
+                    margin: 0mm;
+                }
+                body {
+                    margin: 0;
+                    padding: ${isPdf ? '0' : '20px'};
+                    font-family: sans-serif;
+                    background: white;
+                    color: black;
+                }
+                .pdf-page-img {
+                    width: 100%;
+                    max-width: 100%;
+                    height: auto;
+                    display: block;
+                    page-break-after: always;
+                }
+                .pdf-page-img:last-child {
+                    page-break-after: avoid;
+                }
                 table { border-collapse: collapse; width: 100%; margin-top: 10px; }
                 table th, table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
                 table th { background-color: #f2f2f2; }
+                img, table { page-break-inside: avoid; }
             </style>
         </head>
         <body>
-            <h2>${currentOpenItem.name}</h2>
-            <hr />
             ${contentHtml}
             <script>
                 window.onload = function() {
@@ -525,22 +556,35 @@ function downloadCurrentFile() {
 async function openPdf(url) {
     viewerModal.style.display = 'block';
     viewerBody.innerHTML = `<h2>${translations[currentLang]?.loadingPdf || 'Loading PDF...'}</h2>`;
+    modalPdfZoom.style.display = 'inline-block';
     
     try {
         const loadingTask = window.pdfjsLib.getDocument({ url: url });
-        const pdf = await loadingTask.promise;
-        viewerBody.innerHTML = ''; // clear loading
-        
-        // Render all pages
-        for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-            const page = await pdf.getPage(pageNum);
-            const scale = 1.5;
-            const viewport = page.getViewport({ scale: scale });
+        currentPdfDoc = await loadingTask.promise;
+        renderPdfPages();
+    } catch (e) {
+        const errorText = translations[currentLang]?.errorLoading || 'An error occurred: ';
+        viewerBody.innerHTML = `<h2 style="color:red">${errorText}${e.message}</h2>`;
+    }
+}
+
+async function renderPdfPages() {
+    if (!currentPdfDoc) return;
+    viewerBody.innerHTML = '';
+    
+    try {
+        for (let pageNum = 1; pageNum <= currentPdfDoc.numPages; pageNum++) {
+            const page = await currentPdfDoc.getPage(pageNum);
+            const viewport = page.getViewport({ scale: currentPdfZoom });
             
             const canvas = document.createElement('canvas');
             const context = canvas.getContext('2d');
             canvas.height = viewport.height;
             canvas.width = viewport.width;
+            
+            canvas.style.display = 'block';
+            canvas.style.margin = '10px auto';
+            canvas.style.boxShadow = '0 4px 8px rgba(0,0,0,0.15)';
             
             viewerBody.appendChild(canvas);
             
@@ -551,8 +595,7 @@ async function openPdf(url) {
             await page.render(renderContext).promise;
         }
     } catch (e) {
-        const errorText = translations[currentLang]?.errorLoading || 'An error occurred: ';
-        viewerBody.innerHTML = `<h2 style="color:red">${errorText}${e.message}</h2>`;
+        console.error("Error rendering PDF pages:", e);
     }
 }
 
