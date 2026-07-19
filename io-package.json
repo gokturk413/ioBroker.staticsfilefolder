@@ -1,20 +1,20 @@
 {
 	"common": {
 		"name": "staticsfilefolder",
-		"version": "0.0.24",
+		"version": "0.0.25",
 		"news": {
-			"0.0.24": {
-				"en": "Resolved all remaining repochecker warnings and suggestions, migrated to standard automerge-dependabot workflow, and updated to ESLint v9 with flat config.",
-				"de": "Alle verbleibenden Warnungen und Vorschläge des Repocheckers behoben, auf Standard-Automerge-Dependabot-Workflow umgestellt und auf ESLint v9 mit Flat-Config aktualisiert.",
-				"ru": "Устранены все оставшиеся предупреждения и предложения repochecker, осуществлен переход на стандартный рабочий процесс автослияния dependabot и обновлен до ESLint v9 с плоской конфигурацией.",
-				"pt": "Resolvido todos os avisos e sugestões restantes do repochecker, migrado para o fluxo de trabalho padrão de mesclagem automática do dependabot e atualizado para ESLint v9 com configuração plana.",
-				"nl": "Alle resterende repochecker waarschuwingen en suggesties opgelost, gemigreerd naar de standaard automerge-dependabot workflow, en geüpgraded naar ESLint v9 met flat config.",
-				"fr": "Résolution de tous les avertissements et suggestions restants de repochecker, migration vers le flux de travail d'auto-fusion standard de dependabot et mise à jour vers ESLint v9 avec configuration plate.",
-				"it": "Risolti tutti gli avvisi e i suggerimenti rimanenti di repochecker, migrato al flusso di lavoro standard di unione automatica di dependabot e aggiornato a ESLint v9 con configurazione piatta.",
-				"es": "Se resolvieron todas las advertencias y sugerencias restantes de repochecker, se migró al flujo de trabajo estándar de fusión automática de dependabot y se actualizó a ESLint v9 con configuración plana.",
-				"pl": "Rozwiązano wszystkie pozostałe ostrzeżenia i sugestie repocheckera, zmigrowano do standardowego przepływu pracy automatycznego scalania dependabot oraz zaktualizowano do ESLint v9 z płaską konfiguracją.",
-				"uk": "Усунено всі залишені попередження та пропозиції repochecker, здійснено перехід на стандартний робочий процес автозлиття dependabot та оновлено до ESLint v9 з плоскою конфігурацією.",
-				"zh-cn": "解决了所有剩余的 repochecker 警告和建议，迁移到标准的自动合并 dependabot 工作流，并升级到具有平面配置的 ESLint v9。"
+			"0.0.25": {
+				"en": "Resolved ESLint peer dependency warnings, linked CHANGELOG_OLD in README, updated check-and-lint workflow to Node 24, and added major auto-merge rules for GitHub actions.",
+				"de": "ESLint-Peer-Abhängigkeitswarnungen behoben, CHANGELOG_OLD in README verlinkt, Check-and-Lint-Workflow auf Node 24 aktualisiert und wichtige Auto-Merge-Regeln für GitHub-Aktionen hinzugefügt.",
+				"ru": "Устранены предупреждения о зависимостях ESLint, добавлена ссылка на CHANGELOG_OLD в README, рабочий процесс check-and-lint обновлен до Node 24 и добавлены основные правила автоматического слияния для GitHub-действий.",
+				"pt": "Resolvido avisos de dependência do ESLint, linkado CHANGELOG_OLD no README, atualizado o fluxo de trabalho check-and-lint para Node 24 e adicionado regras de mesclagem automática importantes para ações do GitHub.",
+				"nl": "ESLint peer-dependency waarschuwingen opgelost, CHANGELOG_OLD gelinkt in README, check-and-lint workflow bijgewerkt naar Node 24, en belangrijke auto-merge regels voor GitHub actions toegevoegd.",
+				"fr": "Résolution des avertissements de dépendance de pair ESLint, lien vers CHANGELOG_OLD dans le README, mise à jour du flux de travail check-and-lint vers Node 24 et ajout de règles d'auto-fusion majeures pour les actions GitHub.",
+				"it": "Risolti gli avvisi sulle dipendenze peer di ESLint, collegato CHANGELOG_OLD nel README, aggiornato il flusso di lavoro check-and-lint a Node 24 e aggiunte importanti regole di unione automatica per le azioni GitHub.",
+				"es": "Se resolvieron las advertencias de dependencia del par ESLint, se vinculó CHANGELOG_OLD en README, se actualizó el flujo de trabajo check-and-lint a Node 24 y se agregaron reglas importantes de fusión automática para las acciones de GitHub.",
+				"pl": "Rozwiązano ostrzeżenia dotyczące zależności partnerskich ESLint, podlinkowano CHANGELOG_OLD w README, zaktualizowano przepływ pracy check-and-lint do Node 24 oraz dodano ważne reguły automatycznego scalania dla akcji GitHub.",
+				"uk": "Усунено попередження про залежності ESLint, додано посилання на CHANGELOG_OLD в README, робочий процес check-and-lint оновлено до Node 24 та додано основні правила автоматичного злиття для GitHub-дій.",
+				"zh-cn": "解决了 ESLint 同伴依赖警告，在 README 中链接了 CHANGELOG_OLD，将 check-and-lint 工作流更新为 Node 24，并为 GitHub 操作添加了主要的自动合并规则。"
 			},
 			"0.0.15": {
 				"en": "Reverted minimum Node.js engine requirement to 20 to support GitHub Actions runners.",

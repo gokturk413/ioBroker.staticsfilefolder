@@ -64,6 +64,9 @@ Once configured and the instance is running (green status):
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### 0.0.25
+* Resolved ESLint peer dependency warnings, linked CHANGELOG_OLD in README, updated check-and-lint workflow to Node 24, and added major auto-merge rules for GitHub actions.
+
 ### 0.0.24
 * Resolved all remaining repochecker warnings and suggestions, migrated to standard automerge-dependabot workflow, and updated to ESLint v9 with flat config.
 
@@ -96,6 +99,8 @@ Once configured and the instance is running (green status):
 
 ### 0.0.1
 * (gokturk413) initial release: SPA, Offline document viewers, Chokidar file observer.
+
+[Older changelog entries](CHANGELOG_OLD.md)
 
 ## License
 MIT License
