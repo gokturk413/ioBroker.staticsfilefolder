@@ -64,6 +64,9 @@ Once configured and the instance is running (green status):
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### 0.0.24
+* Resolved all remaining repochecker warnings and suggestions, migrated to standard automerge-dependabot workflow, and updated to ESLint v9 with flat config.
+
 ### 0.0.23
 * Added live rendering / auto-refresh in file explorer on file additions/deletions.
 

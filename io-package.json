@@ -1,20 +1,20 @@
 {
 	"common": {
 		"name": "staticsfilefolder",
-		"version": "0.0.23",
+		"version": "0.0.24",
 		"news": {
-			"0.0.23": {
-				"en": "Added live rendering / auto-refresh in file explorer on file additions/deletions.",
-				"de": "Live-Rendering / automatische Aktualisierung im Datei-Explorer bei Hinzufügung/Löschung von Dateien hinzugefügt.",
-				"ru": "Добавлено живое отображение / автообновление в проводнике файлов при добавлении/удалении файлов.",
-				"pt": "Adicionada renderização ao vivo / atualização automática no explorador de arquivos ao adicionar/excluir arquivos.",
-				"nl": "Live rendering / auto-refresh toegevoegd in de bestandsbrowser bij toevoeging/verwijdering van bestanden.",
-				"fr": "Ajout du rendu en direct / de l'actualisation automatique dans l'explorateur de fichiers lors de l'ajout/suppression de fichiers.",
-				"it": "Aggiunto rendering live / aggiornamento automatico in Esplora file all'aggiunta/eliminazione di file.",
-				"es": "Se agregó renderizado en vivo / actualización automática en el explorador de archivos al agregar o eliminar archivos.",
-				"pl": "Dodano renderowanie na żywo / automatyczne odświeżanie w eksploratorze plików przy dodawaniu/usuwaniu plików.",
-				"uk": "Додано живе відображення / автооновлення в провіднику файлів при додаванні/вилученні файлів.",
-				"zh-cn": "在文件资源管理器中添加了在添加/删除文件时的实时渲染/自动刷新。"
+			"0.0.24": {
+				"en": "Resolved all remaining repochecker warnings and suggestions, migrated to standard automerge-dependabot workflow, and updated to ESLint v9 with flat config.",
+				"de": "Alle verbleibenden Warnungen und Vorschläge des Repocheckers behoben, auf Standard-Automerge-Dependabot-Workflow umgestellt und auf ESLint v9 mit Flat-Config aktualisiert.",
+				"ru": "Устранены все оставшиеся предупреждения и предложения repochecker, осуществлен переход на стандартный рабочий процесс автослияния dependabot и обновлен до ESLint v9 с плоской конфигурацией.",
+				"pt": "Resolvido todos os avisos e sugestões restantes do repochecker, migrado para o fluxo de trabalho padrão de mesclagem automática do dependabot e atualizado para ESLint v9 com configuração plana.",
+				"nl": "Alle resterende repochecker waarschuwingen en suggesties opgelost, gemigreerd naar de standaard automerge-dependabot workflow, en geüpgraded naar ESLint v9 met flat config.",
+				"fr": "Résolution de tous les avertissements et suggestions restants de repochecker, migration vers le flux de travail d'auto-fusion standard de dependabot et mise à jour vers ESLint v9 avec configuration plate.",
+				"it": "Risolti tutti gli avvisi e i suggerimenti rimanenti di repochecker, migrato al flusso di lavoro standard di unione automatica di dependabot e aggiornato a ESLint v9 con configurazione piatta.",
+				"es": "Se resolvieron todas las advertencias y sugerencias restantes de repochecker, se migró al flujo de trabajo estándar de fusión automática de dependabot y se actualizó a ESLint v9 con configuración plana.",
+				"pl": "Rozwiązano wszystkie pozostałe ostrzeżenia i sugestie repocheckera, zmigrowano do standardowego przepływu pracy automatycznego scalania dependabot oraz zaktualizowano do ESLint v9 z płaską konfiguracją.",
+				"uk": "Усунено всі залишені попередження та пропозиції repochecker, здійснено перехід на стандартний робочий процес автозлиття dependabot та оновлено до ESLint v9 з плоскою конфігурацією.",
+				"zh-cn": "解决了所有剩余的 repochecker 警告和建议，迁移到标准的自动合并 dependabot 工作流，并升级到具有平面配置的 ESLint v9。"
 			},
 			"0.0.15": {
 				"en": "Reverted minimum Node.js engine requirement to 20 to support GitHub Actions runners.",
@@ -99,8 +99,9 @@
 			"gokturk413 <gokturk413@gmail.com>"
 		],
 		"keywords": [
-			"ioBroker",
-			"Static Files Directory Browsing"
+			"static-files",
+			"directory-browsing",
+			"file-viewer"
 		],
 		"licenseInformation": {
 			"type": "free",

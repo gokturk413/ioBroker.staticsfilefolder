@@ -3,10 +3,8 @@ updates:
   - package-ecosystem: npm
     directory: "/"
     schedule:
-      interval: monthly
-      time: "04:00"
-      timezone: Europe/Berlin
-    open-pull-requests-limit: 5
+      interval: "cron"
+    open-pull-requests-limit: 15
     assignees:
       - gokturk413
     versioning-strategy: increase
@@ -19,10 +17,8 @@ updates:
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
-      interval: monthly
-      time: "04:00"
-      timezone: Europe/Berlin
-    open-pull-requests-limit: 5
+      interval: "cron"
+    open-pull-requests-limit: 15
     assignees:
       - gokturk413
     cooldown:
