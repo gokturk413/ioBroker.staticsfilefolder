@@ -64,6 +64,12 @@ Once configured and the instance is running (green status):
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### 0.0.28
+* Fully migrated materialized admin UI to modern admin 5 jsonConfig UI, and evaluated typescript 7 compatibility.
+
+### 0.0.27
+* Upgraded typescript to version 7, and fully migrated materialized admin UI to modern admin 5 jsonConfig UI.
+
 ### 0.0.26
 * Regenerated lockfile cleanly to resolve npm ci errors on GitHub Actions workflow.
 

@@ -1,20 +1,20 @@
 {
 	"common": {
 		"name": "staticsfilefolder",
-		"version": "0.0.26",
+		"version": "0.0.28",
 		"news": {
-			"0.0.26": {
-				"en": "Regenerated lockfile cleanly to resolve npm ci errors on GitHub Actions workflow.",
-				"de": "Lockfile sauber regeneriert, um npm-ci-Fehler im GitHub Actions-Workflow zu beheben.",
-				"ru": "Чистая регенерация lockfile для устранения ошибок npm ci в рабочем процессе GitHub Actions.",
-				"pt": "Regenerado o lockfile de forma limpa para resolver erros do npm ci no fluxo de trabalho do GitHub Actions.",
-				"nl": "Lockfile schoon geregenereerd om npm ci-fouten in de GitHub Actions-workflow op te lossen.",
-				"fr": "Régénération propre du fichier lockfile pour résoudre les erreurs npm ci dans le flux de travail GitHub Actions.",
-				"it": "Rigenerato in modo pulito il lockfile per risolvere gli errori di npm ci nel flusso di lavoro di GitHub Actions.",
-				"es": "Se regeneró el archivo lockfile de forma limpia para resolver los errores de npm ci en el flujo de trabajo de GitHub Actions.",
-				"pl": "Czysto zregenerowano plik blokady lockfile, aby rozwiązać błędy npm ci w przepływie pracy GitHub Actions.",
-				"uk": "Чиста регенерація lockfile для усунення помилок npm ci у робочому процесі GitHub Actions.",
-				"zh-cn": "干净地重新生成 lockfile，以解决 GitHub Actions 工作流中的 npm ci 错误。"
+			"0.0.28": {
+				"en": "Fully migrated materialized admin UI to modern admin 5 jsonConfig UI, and evaluated typescript 7 compatibility.",
+				"de": "Die materialized Admin-Benutzeroberfläche wurde vollständig auf die moderne Admin 5 jsonConfig-Benutzeroberfläche migriert, und die TypeScript 7-Kompatibilität wurde evaluiert.",
+				"ru": "Полностью перенесен materialized интерфейс администратора на современный интерфейс jsonConfig администратора 5, а также оценена совместимость с TypeScript 7.",
+				"pt": "Migrado totalmente a UI do admin materialized para a moderna UI jsonConfig do admin 5 e avaliado a compatibilidade do typescript 7.",
+				"nl": "Materialized admin UI volledig gemigreerd naar modern admin 5 jsonConfig UI, en typescript 7 compatibiliteit geëvalueerd.",
+				"fr": "Migration complète de l'interface utilisateur d'administration materialized vers l'interface utilisateur moderne admin 5 jsonConfig, et évaluation de la compatibilité avec typescript 7.",
+				"it": "Migrata completamente l'interfaccia utente materialized dell'amministratore alla moderna interfaccia utente jsonConfig dell'amministratore 5, e valutata la compatibilità con typescript 7.",
+				"es": "Se migró completamente la interfaz de usuario materialize del administrador a la interfaz de usuario moderna jsonConfig del administrador 5, y se evaluó la compatibilidad con typescript 7.",
+				"pl": "W pełni zmigrowano materialized interfejs administratora do nowoczesnego interfejsu jsonConfig administratora 5, oraz oceniono kompatybilność z typescript 7.",
+				"uk": "Повністю перенесено materialized інтерфейс адміністратора на сучасний інтерфейс jsonConfig адміністратора 5, а також оцінено сумісність з typescript 7.",
+				"zh-cn": "将 materialized 管理员 UI 完全迁移到现代管理员 5 jsonConfig UI，并评估了 typescript 7 兼容性。"
 			},
 			"0.0.15": {
 				"en": "Reverted minimum Node.js engine requirement to 20 to support GitHub Actions runners.",
@@ -121,7 +121,7 @@
 		"connectionType": "local",
 		"dataSource": "poll",
 		"adminUI": {
-			"config": "materialize"
+			"config": "json"
 		},
 		"dependencies": [
 			{
@@ -136,7 +136,9 @@
 		]
 	},
 	"native": {
-		"webInstance": "*"
+		"webInstance": "*",
+		"route": "demo",
+		"dirname": ""
 	},
 	"objects": [],
 	"instanceObjects": [
