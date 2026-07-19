@@ -64,6 +64,9 @@ Once configured and the instance is running (green status):
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### 0.0.26
+* Regenerated lockfile cleanly to resolve npm ci errors on GitHub Actions workflow.
+
 ### 0.0.25
 * Resolved ESLint peer dependency warnings, linked CHANGELOG_OLD in README, updated check-and-lint workflow to Node 24, and added major auto-merge rules for GitHub actions.
 

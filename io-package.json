@@ -1,20 +1,20 @@
 {
 	"common": {
 		"name": "staticsfilefolder",
-		"version": "0.0.25",
+		"version": "0.0.26",
 		"news": {
-			"0.0.25": {
-				"en": "Resolved ESLint peer dependency warnings, linked CHANGELOG_OLD in README, updated check-and-lint workflow to Node 24, and added major auto-merge rules for GitHub actions.",
-				"de": "ESLint-Peer-Abhängigkeitswarnungen behoben, CHANGELOG_OLD in README verlinkt, Check-and-Lint-Workflow auf Node 24 aktualisiert und wichtige Auto-Merge-Regeln für GitHub-Aktionen hinzugefügt.",
-				"ru": "Устранены предупреждения о зависимостях ESLint, добавлена ссылка на CHANGELOG_OLD в README, рабочий процесс check-and-lint обновлен до Node 24 и добавлены основные правила автоматического слияния для GitHub-действий.",
-				"pt": "Resolvido avisos de dependência do ESLint, linkado CHANGELOG_OLD no README, atualizado o fluxo de trabalho check-and-lint para Node 24 e adicionado regras de mesclagem automática importantes para ações do GitHub.",
-				"nl": "ESLint peer-dependency waarschuwingen opgelost, CHANGELOG_OLD gelinkt in README, check-and-lint workflow bijgewerkt naar Node 24, en belangrijke auto-merge regels voor GitHub actions toegevoegd.",
-				"fr": "Résolution des avertissements de dépendance de pair ESLint, lien vers CHANGELOG_OLD dans le README, mise à jour du flux de travail check-and-lint vers Node 24 et ajout de règles d'auto-fusion majeures pour les actions GitHub.",
-				"it": "Risolti gli avvisi sulle dipendenze peer di ESLint, collegato CHANGELOG_OLD nel README, aggiornato il flusso di lavoro check-and-lint a Node 24 e aggiunte importanti regole di unione automatica per le azioni GitHub.",
-				"es": "Se resolvieron las advertencias de dependencia del par ESLint, se vinculó CHANGELOG_OLD en README, se actualizó el flujo de trabajo check-and-lint a Node 24 y se agregaron reglas importantes de fusión automática para las acciones de GitHub.",
-				"pl": "Rozwiązano ostrzeżenia dotyczące zależności partnerskich ESLint, podlinkowano CHANGELOG_OLD w README, zaktualizowano przepływ pracy check-and-lint do Node 24 oraz dodano ważne reguły automatycznego scalania dla akcji GitHub.",
-				"uk": "Усунено попередження про залежності ESLint, додано посилання на CHANGELOG_OLD в README, робочий процес check-and-lint оновлено до Node 24 та додано основні правила автоматичного злиття для GitHub-дій.",
-				"zh-cn": "解决了 ESLint 同伴依赖警告，在 README 中链接了 CHANGELOG_OLD，将 check-and-lint 工作流更新为 Node 24，并为 GitHub 操作添加了主要的自动合并规则。"
+			"0.0.26": {
+				"en": "Regenerated lockfile cleanly to resolve npm ci errors on GitHub Actions workflow.",
+				"de": "Lockfile sauber regeneriert, um npm-ci-Fehler im GitHub Actions-Workflow zu beheben.",
+				"ru": "Чистая регенерация lockfile для устранения ошибок npm ci в рабочем процессе GitHub Actions.",
+				"pt": "Regenerado o lockfile de forma limpa para resolver erros do npm ci no fluxo de trabalho do GitHub Actions.",
+				"nl": "Lockfile schoon geregenereerd om npm ci-fouten in de GitHub Actions-workflow op te lossen.",
+				"fr": "Régénération propre du fichier lockfile pour résoudre les erreurs npm ci dans le flux de travail GitHub Actions.",
+				"it": "Rigenerato in modo pulito il lockfile per risolvere gli errori di npm ci nel flusso di lavoro di GitHub Actions.",
+				"es": "Se regeneró el archivo lockfile de forma limpia para resolver los errores de npm ci en el flujo de trabajo de GitHub Actions.",
+				"pl": "Czysto zregenerowano plik blokady lockfile, aby rozwiązać błędy npm ci w przepływie pracy GitHub Actions.",
+				"uk": "Чиста регенерація lockfile для усунення помилок npm ci у робочому процесі GitHub Actions.",
+				"zh-cn": "干净地重新生成 lockfile，以解决 GitHub Actions 工作流中的 npm ci 错误。"
 			},
 			"0.0.15": {
 				"en": "Reverted minimum Node.js engine requirement to 20 to support GitHub Actions runners.",
