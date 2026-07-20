@@ -5,61 +5,30 @@
 		"webInstance": {
 			"type": "instance",
 			"adapter": "web",
-			"allowAll": true,
-			"label": {
-				"en": "Extend WEB adapter:",
-				"de": "WEB-Adapter erweitern:",
-				"ru": "Расширить веб-адаптер:",
-				"pt": "Estender o adaptador WEB:",
-				"nl": "Breid WEB-adapter uit:",
-				"fr": "Étendre l'adaptateur WEB :",
-				"it": "Estendi l'adattatore WEB:",
-				"es": "Ampliar el adaptador WEB:",
-				"pl": "Rozszerz adapter WEB:",
-				"uk": "Розширити веб-адаптер:",
-				"zh-cn": "扩展WEB适配器:",
-				"az": "WEB adapteri genişləndir:"
-			},
+			"label": "Extend WEB adapter:",
+			"xs": 12,
 			"sm": 12,
-			"md": 6
+			"md": 6,
+			"lg": 6,
+			"xl": 6
 		},
 		"route": {
 			"type": "text",
-			"label": {
-				"en": "Route path:",
-				"de": "Routenpfad:",
-				"ru": "Путь маршрута:",
-				"pt": "Caminho da rota:",
-				"nl": "Routetracé:",
-				"fr": "Chemin d'accès:",
-				"it": "Percorso della rotta:",
-				"es": "Ruta de acceso:",
-				"pl": "Ścieżka trasy:",
-				"uk": "Шлях маршруту:",
-				"zh-cn": "路由路径:",
-				"az": "Marşrut yolu:"
-			},
+			"label": "Route path:",
+			"xs": 12,
 			"sm": 12,
-			"md": 6
+			"md": 6,
+			"lg": 6,
+			"xl": 6
 		},
 		"dirname": {
 			"type": "text",
-			"label": {
-				"en": "Static Files Directory:",
-				"de": "Verzeichnis für statische Dateien:",
-				"ru": "Каталог статических файлов:",
-				"pt": "Diretório de arquivos estáticos:",
-				"nl": "Bestandsmap voor statische bestanden:",
-				"fr": "Répertoire des fichiers statiques :",
-				"it": "Directory dei file statici:",
-				"es": "Directorio de archivos estáticos:",
-				"pl": "Katalog plików statycznych:",
-				"uk": "Каталог статичних файлів:",
-				"zh-cn": "静态文件目录:",
-				"az": "Statik Fayllar Qovluğu:"
-			},
+			"label": "Static Files Directory:",
+			"xs": 12,
 			"sm": 12,
-			"md": 12
+			"md": 12,
+			"lg": 12,
+			"xl": 12
 		}
 	}
 }
