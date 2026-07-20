@@ -1,8 +1,21 @@
 {
 	"common": {
 		"name": "staticsfilefolder",
-		"version": "0.0.29",
+		"version": "0.0.30",
 		"news": {
+			"0.0.30": {
+				"en": "Resolved jsonConfig schema validation requirements and added admin i18n translation files.",
+				"de": "jsonConfig-Schema-Validierungsanforderungen behoben und Admin-i18n-Übersetzungsdateien hinzugefügt.",
+				"ru": "Устранены требования валидации схемы jsonConfig и добавлены файлы перевода admin i18n.",
+				"pt": "Resolvidos os requisitos de validação do esquema jsonConfig e adicionados arquivos de tradução i18n do admin.",
+				"nl": "jsonConfig schema-validatievereisten opgelost en admin i18n vertaalbestanden toegevoegd.",
+				"fr": "Exigences de validation du schéma jsonConfig résolues et fichiers de traduction i18n admin ajoutés.",
+				"it": "Risolti i requisiti di validazione dello schema jsonConfig e aggiunti i file di traduzione i18n admin.",
+				"es": "Se resolvieron los requisitos de validación del esquema jsonConfig y se agregaron archivos de traducción i18n de administración.",
+				"pl": "Rozwiązano wymagania walidacji schematu jsonConfig i dodano pliki tłumaczeń admin i18n.",
+				"uk": "Усунено вимоги валідації схеми jsonConfig та додано файли перекладу admin i18n.",
+				"zh-cn": "解决了 jsonConfig 模式验证要求并添加了 admin i18n 翻译文件。"
+			},
 			"0.0.29": {
 				"en": "Fixed tsconfig type checking configuration for adapter build.",
 				"de": "Typprüfungs-Konfiguration in tsconfig für den Adapter-Build behoben.",

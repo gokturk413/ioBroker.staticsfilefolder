@@ -64,6 +64,9 @@ Once configured and the instance is running (green status):
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### 0.0.30
+* Resolved jsonConfig schema validation requirements and added admin i18n translation files.
+
 ### 0.0.29
 * Fixed tsconfig type checking configuration for adapter build.
 
