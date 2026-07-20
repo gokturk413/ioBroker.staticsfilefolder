@@ -24,7 +24,7 @@
 		// "noUnusedLocals": true,
 		// "noUnusedParameters": true,
 		"useUnknownInCatchVariables": false,
-
+		"lib": ["es2022", "dom"]
 	},
 	"include": [
 		"**/*.js",

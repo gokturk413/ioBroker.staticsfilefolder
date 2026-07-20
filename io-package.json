@@ -1,8 +1,21 @@
 {
 	"common": {
 		"name": "staticsfilefolder",
-		"version": "0.0.28",
+		"version": "0.0.29",
 		"news": {
+			"0.0.29": {
+				"en": "Fixed tsconfig type checking configuration for adapter build.",
+				"de": "Typprüfungs-Konfiguration in tsconfig für den Adapter-Build behoben.",
+				"ru": "Исправлена конфигурация проверки типов tsconfig для сборки адаптера.",
+				"pt": "Corrigida a configuração de verificação de tipos do tsconfig para o build do adaptador.",
+				"nl": "Typechecking-configuratie in tsconfig opgelost voor de adapter-build.",
+				"fr": "Correction de la configuration de vérification des types tsconfig pour le build de l'adaptateur.",
+				"it": "Corretta la configurazione del controllo dei tipi tsconfig per il build dell'adattatore.",
+				"es": "Se corrigió la configuración de comprobación de tipos tsconfig para la compilación del adaptador.",
+				"pl": "Naprawiono konfigurację sprawdzania typów tsconfig dla kompilacji adaptera.",
+				"uk": "Виправлено конфігурацію перевірки типів tsconfig для збірки адаптера.",
+				"zh-cn": "修复了适配器构建的 tsconfig 类型检查配置。"
+			},
 			"0.0.28": {
 				"en": "Fully migrated materialized admin UI to modern admin 5 jsonConfig UI, and evaluated typescript 7 compatibility.",
 				"de": "Die materialized Admin-Benutzeroberfläche wurde vollständig auf die moderne Admin 5 jsonConfig-Benutzeroberfläche migriert, und die TypeScript 7-Kompatibilität wurde evaluiert.",

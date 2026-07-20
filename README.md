@@ -64,6 +64,9 @@ Once configured and the instance is running (green status):
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### 0.0.29
+* Fixed tsconfig type checking configuration for adapter build.
+
 ### 0.0.28
 * Fully migrated materialized admin UI to modern admin 5 jsonConfig UI, and evaluated typescript 7 compatibility.
 
